@@ -1,4 +1,4 @@
-var startTimer = 10;
+var startTimer = 150;
 var findItemPrize = 5; // coins count when gamer find one hidden item
 
 
@@ -286,5 +286,13 @@ function launchGeraLevel1() {
             return 0;
         });
     }
+
+    $('#searchField').dblclick(function () {
+            $('body').css({pointerEvents: 'none'});
+            $('html,body').css('cursor','no-drop ');
+            setTimeout(function(){
+                $('body').css({pointerEvents: 'auto', cursor: 'default'});
+            }, 2500)
+    })
 
 }
