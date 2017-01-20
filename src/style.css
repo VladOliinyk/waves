@@ -1,0 +1,163 @@
+/* hide hosting data*/
+.cbalink {
+    display: none;
+}
+
+/* ---------------- */
+
+@font-face {
+    font-family: myCenturyGothic; /* Гарнитура шрифта */
+    src: url("../src/fonts/GOTHIC.TTF"); /* Путь к файлу со шрифтом */
+}
+
+.loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: rgb(238, 238, 238) url('../img/loading.gif') no-repeat center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: myCenturyGothic, serif;
+    font-style: normal;
+}
+
+body {
+    min-width: 1200px;
+}
+
+/*#gametitle {*/
+/*text-align: center;*/
+/*font-size: 1.5em;*/
+/*line-height: 1.6em;*/
+/*font-family: myCenturyGothic, serif;*/
+/*color: #3d3d3d;*/
+/*}*/
+
+#gamearea {
+    position: relative;
+
+    width: 1200px;
+    height: 600px;
+    min-width: 1200px;
+    min-height: 600px;
+    max-width: 1200px;
+    max-height: 600px;
+
+    left: 50%;
+    margin: 15px 0 0 -600px;
+
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0);
+}
+.gamearea_XX {
+
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+
+    float: left;
+
+    /*box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3);*/
+}
+
+#gamer {
+    position: absolute;
+
+    left: 50px;
+    top: 0;
+
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+
+    /*box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);*/
+
+    /*border-radius: 50%;*/
+
+    background: url("../img/gamer/gamer_b.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#menu {
+    position: relative;
+
+    left: 50%;
+    margin: 0 0 0 -600px;
+
+    text-align: center;
+
+    width: 1200px;
+    height: 100px;
+
+    overflow: hidden;
+
+    background-image: url("../img/bottom-boxes/bottom-box-clear.png");
+}
+
+.bottom-boxes {
+    float: left;
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+
+    background-image: url("../img/bottom-boxes/bottom-box-clear.png");
+}
+
+.menu_coin {
+    margin: 20px 0 0 10px;
+    width: 35px;
+    height: 35px;
+    float: left;
+    display: inline-block;
+    background-size: cover;
+}
+
+#menu_coinA {
+    background-image: url("../img/coinA.png");
+}
+
+#menu_coinA_gold {
+    background-image: url("../img/coinA_gold.png");
+}
+
+#bottom-box-12 {
+    float: right;
+}
+
+#bottom-box-12 > input {
+    background: none;
+    border: none;
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#bottom-box-12 > input {
+    background: none;
+    border: none;
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    color: #ffffff;
+}

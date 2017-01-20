@@ -1,0 +1,218 @@
+#main_bg_lvl1 {
+    /*background-image: url("../img/search/level1-clear.png");*/
+    width: 1200px;
+    height: 600px;
+    background-size: contain;
+
+    background-repeat: no-repeat;
+    position: relative;
+
+}
+
+.img_click {
+    background-size: cover;
+    position: absolute;
+    display: inline-block;
+    visibility: hidden;
+}
+
+.img_lvl_1_1 {
+    background-image: url("../img/search/level1-item1-pos-30x440-size-68x82.png");
+    width: 68px;
+    height: 82px;
+    left: 30px;
+    top: 440px;
+
+}
+
+.img_lvl_1_2 {
+    background-image: url("../img/search/level1-item2-pos-320x440-size-60x88.png");
+    width: 60px;
+    height: 88px;
+    left: 320px;
+    top: 440px;
+}
+
+.img_lvl_1_3 {
+    background-image: url("../img/search/level1-item3-pos-968x240-size-92x68.png");
+    width: 92px;
+    height: 68px;
+    left: 968px;
+    top: 240px;
+}
+
+.img_lvl_1_4 {
+    background-image: url("../img/search/level1-item4-pos-540x120-size-110x62.png");
+    width: 110px;
+    height: 62px;
+    left: 540px;
+    top: 120px;
+}
+
+.img_lvl_1_5 {
+    background-image: url("../img/search/level1-item5-pos-670x250-size-88x78.png");
+    width: 88px;
+    height: 78px;
+    left: 670px;
+    top: 250px;
+}
+
+.img_lvl_1_6 {
+    background-image: url("../img/search/level1-item6-pos-810x395.png");
+    width: 55px;
+    height: 80px;
+    left: 810px;
+    top: 395px;
+}
+
+.img_lvl_1_7 {
+    background-image: url("../img/search/level1-item7-pos-1115x370.png");
+    width: 71px;
+    height: 85px;
+    left: 1115px;
+    top: 370px;
+}
+
+.img_lvl_1_8 {
+    background-image: url("../img/search/level1-item8-pos-445x327.png");
+    width: 83px;
+    height: 107px;
+    left: 445px;
+    top: 327px;
+}
+
+.img_lvl_1_9 {
+    background-image: url("../img/search/level1-item9-pos-145x285.png");
+    width: 75px;
+    height: 87px;
+    left: 145px;
+    top: 285px;
+
+}
+
+.img_lvl_1_10 {
+    background-image: url("../img/search/level1-item10-pos-960x35.png");
+    width: 88px;
+    height: 100px;
+    left: 960px;
+    top: 35px;
+}
+
+.img_position {
+    /*margin: 0 10%;*/
+    position: absolute;
+    top: 0;
+
+}
+
+#glass {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-image: url("../img/search/zoom.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    float: left;
+
+    margin: 25px;
+}
+
+body {
+    -webkit-user-select: none;
+    /* user-select -- это нестандартное свойство */
+
+    -moz-user-select: none;
+    /* поэтому нужны префиксы */
+
+    -ms-user-select: none;
+}
+
+#control_panel {
+    position: relative;
+
+    width: 1200px;
+    height: 100px;
+    min-width: 1200px;
+    min-height: 100px;
+    max-width: 1200px;
+    max-height: 100px;
+
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0);
+    background-color: red;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+#subjekt {
+    display: inline-block;
+    float: left;
+    width: 500px;
+    background-color: burlywood;
+    height: 90%;
+    margin: 5px 0 0 327px;
+}
+
+.menu_box {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.find_element1{
+    background-image: url("../img/search/level1-item1-hide.png");
+    display: none;
+}
+
+.find_element2{
+    background-image: url("../img/search/level1-item2-hide.png");
+    display: none;
+}
+
+.find_element3{
+    background-image: url("../img/search/level1-item3-hide.png");
+    display: none;
+}
+
+.find_element4{
+    background-image: url("../img/search/level1-item4-hide.png");
+    display: none;
+}
+
+.find_element5{
+    background-image: url("../img/search/level1-item5-hide.png");
+    display: none;
+}
+
+.find_element6{
+    background-image: url("../img/search/level1-item6-hide.png");
+    display: none;
+}
+
+.find_element7{
+    background-image: url("../img/search/level1-item7-hide.png");
+    display: none;
+}
+
+.find_element8{
+    background-image: url("../img/search/level1-item8-hide.png");
+    display: none;
+}
+
+.find_element9{
+    background-image: url("../img/search/level1-item9-hide.png");
+    display: none;
+}
+
+.find_element10{
+    background-image: url("../img/search/level1-item10-hide.png");
+    display: none;
+}
+
+#bottom-box-5 {
+    display: none;
+}
