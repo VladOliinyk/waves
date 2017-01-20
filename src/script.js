@@ -408,7 +408,9 @@ $(document).ready(function () {
 
             currentID = "gamearea_" + bg_row + "_" + bg_col;
 
-            $("#" + currentID).css({"background": 'url("' + level1[bg_row][bg_col]});
+            $("#" + currentID).css({
+                "background-image": 'url("' + level1[bg_row][bg_col] + '")'
+            });
 
         }
 
