@@ -1,8 +1,8 @@
 var startTimer = 10;
+var findItemPrize = 5; // coins count when gamer find one hidden item
+
 
 function launchGeraLevel1() {
-
-
 
     $(".img_lvl_1_1").click(function () {
 
@@ -16,6 +16,8 @@ function launchGeraLevel1() {
                 "background-image": 'url("./img/search/level1-item1-show.png")',
                 "background-repeat": "no-repeat"
             });
+
+            addSilverCoins(findItemPrize);
         });
     });
 
@@ -30,6 +32,7 @@ function launchGeraLevel1() {
                 "background-image": 'url("./img/search/level1-item2-show.png")',
                 "background-repeat": "no-repeat"
             });
+            addSilverCoins(findItemPrize);
         });
     });
 
@@ -45,6 +48,7 @@ function launchGeraLevel1() {
                 "background-image": 'url("./img/search/level1-item3-show.png")',
                 "background-repeat": "no-repeat"
             });
+            addSilverCoins(findItemPrize);
         });
     });
 
@@ -60,6 +64,7 @@ function launchGeraLevel1() {
                 "background-image": 'url("./img/search/level1-item4-show.png")',
                 "background-repeat": "no-repeat"
             });
+            addSilverCoins(findItemPrize);
         });
     });
 
@@ -75,6 +80,7 @@ function launchGeraLevel1() {
                 "background-image": 'url("./img/search/level1-item5-show.png")',
                 "background-repeat": "no-repeat"
             });
+            addSilverCoins(findItemPrize);
         });
     });
 
@@ -90,6 +96,7 @@ function launchGeraLevel1() {
                 "background-image": 'url("./img/search/level1-item6-show.png")',
                 "background-repeat": "no-repeat"
             });
+            addSilverCoins(findItemPrize);
         });
     });
 
@@ -104,7 +111,7 @@ function launchGeraLevel1() {
                 "background-image": 'url("./img/search/level1-item7-show.png")',
                 "background-repeat": "no-repeat"
             });
-
+            addSilverCoins(findItemPrize);
         });
     });
 
@@ -120,6 +127,7 @@ function launchGeraLevel1() {
                 "background-image": 'url("./img/search/level1-item8-show.png")',
                 "background-repeat": "no-repeat"
             });
+            addSilverCoins(findItemPrize);
         });
     });
 
@@ -135,6 +143,7 @@ function launchGeraLevel1() {
                 "background-image": 'url("./img/search/level1-item9-show.png")',
                 "background-repeat": "no-repeat"
             });
+            addSilverCoins(findItemPrize);
         });
     });
 
@@ -150,6 +159,7 @@ function launchGeraLevel1() {
                 "background-image": 'url("./img/search/level1-item10-show.png")',
                 "background-repeat": "no-repeat"
             });
+            addSilverCoins(findItemPrize);
         });
     });
     var loopUsed = false;
@@ -249,7 +259,7 @@ function launchGeraLevel1() {
 
     buy10secBtn.click(function () {
         hideSwarchOverMenu();
-        // addSilverCoins(10);
+        addSilverCoins(-10);
         $("#searchField").fadeIn("slow", function () {
 
         });
@@ -278,4 +288,3 @@ function launchGeraLevel1() {
     }
 
 }
-

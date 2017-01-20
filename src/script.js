@@ -1,18 +1,26 @@
+
+var gamer_step = 50;
+var gamer_step_time = 50;
+var gamer_silver_coins = 20;
+var gamer_gold_coins = 1;
+
+var gameActive = true;
+
+
+
+var gmrX = 1;
+var gmrY = 0;
+
+
+
 $(document).ready(function () {
 
     $('#searchField').css({display: "none"});
 
-    var gamer_step = 50;
-    var gamer_step_time = 50;
-    var gamer_silver_coins = 20;
-    var gamer_gold_coins = 1;
-
-    var gameActive = true;
-
     updateSilverCoinsCount(0);
     updateGoldCoinsCount(0);
 
-    $(document).keypress(function (e) {
+    $(document).keydown(function (e) {
 
         if (gameActive) {
 
@@ -25,40 +33,30 @@ $(document).ready(function () {
             }
 
             console.log(keynum + " pressed");
-            // a - 97
-            // w - 119
-            // s - 115
-            // d - 100
+            // <  - 37
+            // /\ - 38
+            // \/ - 40
+            // >  - 39
 
-            if (keynum == 97) {
+            // a – 65
+            // w – 87
+            // s – 83
+            // d – 68
+
+            if (keynum == 37 || keynum == 65) {
                 moveGamer("left", gamer_step);
             }
-            if (keynum == 119) {
+            if (keynum == 38 || keynum == 87) {
                 moveGamer("top", gamer_step);
             }
-            if (keynum == 115) {
+            if (keynum == 40 || keynum == 83) {
                 moveGamer("down", gamer_step);
             }
-            if (keynum == 100) {
+            if (keynum == 39 || keynum == 68) {
                 moveGamer("right", gamer_step);
             }
-
-
-            if (keynum == 113) {
-                moveGamer("topleft", gamer_step);
-            }
-            if (keynum == 101) {
-                moveGamer("topright", gamer_step);
-            }
-            if (keynum == 122) {
-                moveGamer("downleft", gamer_step);
-            }
-            if (keynum == 99) {
-                moveGamer("downright", gamer_step);
-            }
-
         }
-    })
+    });
 
 
     function moveGamer(direction, step) {
@@ -176,60 +174,6 @@ $(document).ready(function () {
         return award;
     }
 
-    function addSilverCoins(count) {
-        if ((gamer_silver_coins + count) < 0) {
-            return;
-        } else {
-            gamer_silver_coins += count;
-            updateSilverCoinsCount(0);
-        }
-    }
-
-    function updateSilverCoinsCount(count) {
-
-        console.log("now we have " + count + " silver coins");
-
-        if ((gamer_silver_coins + count) < 0) {
-            return;
-        } else {
-            gamer_silver_coins += count;
-            newValue = "x" + gamer_silver_coins;
-            $("#coin_silver_count").val(newValue);
-            console.log("new coins count " + gamer_silver_coins);
-            removeCoinFrom(gmrX, gmrY);
-        }
-    }
-
-    function updateGoldCoinsCount(count) {
-
-        console.log("now we have " + count + " gold coins");
-
-        if ((gamer_gold_coins + count) < 0) {
-            return;
-        } else {
-            gamer_gold_coins += count;
-            newValue = "x" + gamer_gold_coins;
-            $("#coin_gold_count").val(newValue);
-            console.log("new coins count " + gamer_gold_coins);
-            removeCoinFrom(gmrX, gmrY);
-        }
-    }
-
-
-    function removeCoinFrom(gmrX, gmrY) {
-        currentID = "gamearea_" + gmrY + "_" + gmrX;
-        $("#" + currentID).html("");
-    }
-
-
-    function updateCoordsLabel() {
-
-        var gamerY = parseInt($("#gamer").css("top")) + 25;
-        var gamerX = parseInt($("#gamer").css("left")) + 25;
-
-        var str = "Center position: (" + gamerX + ":" + gamerY + ")";
-        $("#coords").val(str);
-    }
 
 
     var dirt__ = "./img/level1/snow/dirt.png";
@@ -328,9 +272,6 @@ $(document).ready(function () {
 
         return html;
     }
-
-    var gmrX = 1;
-    var gmrY = 0;
 
     function canMoveInLevel1(direction) {
 
@@ -432,11 +373,15 @@ $(document).ready(function () {
         });
         $('#bottom-box-5').css({display: "block"});
 
-        if (launchGeraLevel1()) {
+        $.getScript("./src/javascript.js")
+            .done(function () {
 
-        } else {
-            activateUserMovement();
-        };
+                if (launchGeraLevel1()) {
+
+                } else {
+                    activateUserMovement();
+                }
+            })
     }
 
 
@@ -444,4 +389,66 @@ $(document).ready(function () {
         gameActive = true;
     }
 
-});
+
+}); // document ready end
+
+
+
+function updateSilverCoinsCount(count) {
+
+    console.log("now we have " + count + " silver coins");
+
+    if ((gamer_silver_coins + count) < 0) {
+        return;
+    } else {
+        gamer_silver_coins += count;
+        newValue = "x" + gamer_silver_coins;
+        $("#coin_silver_count").val(newValue);
+        console.log("new coins count " + gamer_silver_coins);
+        removeCoinFrom(gmrX, gmrY);
+    }
+}
+
+function updateGoldCoinsCount(count) {
+
+    console.log("now we have " + count + " gold coins");
+
+    if ((gamer_gold_coins + count) < 0) {
+        return;
+    } else {
+        gamer_gold_coins += count;
+        newValue = "x" + gamer_gold_coins;
+        $("#coin_gold_count").val(newValue);
+        console.log("new coins count " + gamer_gold_coins);
+        removeCoinFrom(gmrX, gmrY);
+    }
+}
+
+
+function removeCoinFrom(gmrX, gmrY) {
+    currentID = "gamearea_" + gmrY + "_" + gmrX;
+    $("#" + currentID).html("");
+}
+
+
+function updateCoordsLabel() {
+
+    var gamerY = parseInt($("#gamer").css("top")) + 25;
+    var gamerX = parseInt($("#gamer").css("left")) + 25;
+
+    var str = "Center position: (" + gamerX + ":" + gamerY + ")";
+    $("#coords").val(str);
+}
+
+
+
+
+function addSilverCoins(count) {
+    console.log("add " + count + " coins");
+    if ((gamer_silver_coins + count) < 0) {
+        return;
+    } else {
+        gamer_silver_coins += count;
+        updateSilverCoinsCount(0);
+    }
+}
