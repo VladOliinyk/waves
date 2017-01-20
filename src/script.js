@@ -67,7 +67,7 @@ $(document).ready(function () {
         var topRange = parseInt(gamer_div.css("top"));
 
         if (direction == "left") {
-            gamer_div.css({"background-image": 'url("./img/gamer/gamer_l.png"'});
+            gamer_div.css({"background-image": 'url("./img/gamer/gamer_l.png")'});
 
             if (!canMoveInLevel1(direction)) {
                 return;
@@ -89,7 +89,7 @@ $(document).ready(function () {
         }
 
         if (direction == "right") {
-            gamer_div.css({"background-image": 'url("./img/gamer/gamer_r.png"'});
+            gamer_div.css({"background-image": 'url("./img/gamer/gamer_r.png")'});
 
             if (!canMoveInLevel1(direction)) {
                 return;
@@ -111,7 +111,7 @@ $(document).ready(function () {
         }
 
         if (direction == "top") {
-            gamer_div.css({"background-image": 'url("./img/gamer/gamer_t.png"'});
+            gamer_div.css({"background-image": 'url("./img/gamer/gamer_t.png")'});
 
             if (!canMoveInLevel1(direction)) {
                 return;
@@ -133,7 +133,7 @@ $(document).ready(function () {
         }
 
         if (direction == "down") {
-            gamer_div.css({"background-image": 'url("./img/gamer/gamer_b.png"'});
+            gamer_div.css({"background-image": 'url("./img/gamer/gamer_b.png")'});
 
             if (!canMoveInLevel1(direction)) {
                 return;
