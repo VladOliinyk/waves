@@ -2,7 +2,7 @@ var startTimer = 150;
 var findItemPrize = 5; // coins count when gamer find one hidden item
 
 
-function launchGeraLevel1() {
+function launchGeraLevel10() {
 
     $(".img_lvl_1_1").click(function () {
 

@@ -17,85 +17,85 @@
 }
 
 .img_lvl_1_1 {
-    background-image: url("../img/search/level1-item1-pos-30x440-size-68x82.png");
-    width: 68px;
-    height: 82px;
-    left: 30px;
-    top: 440px;
+    background-image: url("../img/cargo1/cardreader x=315  y=58.png");
+    width: 37px;
+    height: 80px;
+    left: 315px;
+    top: 58px;
 
 }
 
 .img_lvl_1_2 {
-    background-image: url("../img/search/level1-item2-pos-320x440-size-60x88.png");
-    width: 60px;
-    height: 88px;
-    left: 320px;
-    top: 440px;
+    background-image: url("../img/cargo1/compass x=586 y=130.png");
+    width: 52px;
+    height: 51px;
+    left: 586px;
+    top: 130px;
 }
 
 .img_lvl_1_3 {
-    background-image: url("../img/search/level1-item3-pos-968x240-size-92x68.png");
-    width: 92px;
-    height: 68px;
-    left: 968px;
-    top: 240px;
+    background-image: url("../img/cargo1/engine x=842 y=374.png");
+    width: 76px;
+    height: 60px;
+    left: 842px;
+    top: 374px;
 }
 
 .img_lvl_1_4 {
-    background-image: url("../img/search/level1-item4-pos-540x120-size-110x62.png");
-    width: 110px;
-    height: 62px;
-    left: 540px;
-    top: 120px;
+    background-image: url("../img/cargo1/magnet x=383 y=137.png");
+    width: 55px;
+    height: 49px;
+    left: 383px;
+    top: 137px;
 }
 
 .img_lvl_1_5 {
-    background-image: url("../img/search/level1-item5-pos-670x250-size-88x78.png");
-    width: 88px;
-    height: 78px;
-    left: 670px;
-    top: 250px;
+    background-image: url("../img/cargo1/magnetman x=466 y=365.png");
+    width: 71px;
+    height: 59px;
+    left: 466px;
+    top: 365px;
 }
 
 .img_lvl_1_6 {
-    background-image: url("../img/search/level1-item6-pos-810x395.png");
-    width: 55px;
-    height: 80px;
-    left: 810px;
-    top: 395px;
+    background-image: url("../img/cargo1/magnetto x=466 y=220.png");
+    width: 58px;
+    height: 70px;
+    left: 466px;
+    top: 220px;
 }
 
 .img_lvl_1_7 {
-    background-image: url("../img/search/level1-item7-pos-1115x370.png");
-    width: 71px;
-    height: 85px;
-    left: 1115px;
-    top: 370px;
+    background-image: url("../img/cargo1/neocube x=630 y=280.png");
+    width: 36px;
+    height: 41px;
+    left: 630px;
+    top: 280px;
 }
 
 .img_lvl_1_8 {
-    background-image: url("../img/search/level1-item8-pos-445x327.png");
-    width: 83px;
-    height: 107px;
-    left: 445px;
-    top: 327px;
+    background-image: url("../img/cargo1/pokemon x=730 y=58.png");
+    width: 72px;
+    height: 42px;
+    left: 730px;
+    top: 58px;
 }
 
 .img_lvl_1_9 {
-    background-image: url("../img/search/level1-item9-pos-145x285.png");
-    width: 75px;
-    height: 87px;
-    left: 145px;
-    top: 285px;
+    background-image: url("../img/cargo1/sound x=180 y=130.png");
+    width: 88px;
+    height: 53px;
+    left: 180px;
+    top: 130px;
 
 }
 
 .img_lvl_1_10 {
-    background-image: url("../img/search/level1-item10-pos-960x35.png");
-    width: 88px;
-    height: 100px;
-    left: 960px;
-    top: 35px;
+    background-image: url("../img/cargo1/ua x=740 y=360.png");
+    width: 65px;
+    height: 44px;
+    left: 740px;
+    top: 360px;
 }
 
 .img_position {
@@ -164,52 +164,52 @@ body {
     float: left;
 }
 .find_element1{
-    background-image: url("../img/search/level1-item1-hide.png");
+    background-image: url("../img/cargo1/menu_images/cardreader-hide.png");
     display: none;
 }
 
 .find_element2{
-    background-image: url("../img/search/level1-item2-hide.png");
+    background-image: url("../img/cargo1/menu_images/compass-hide.png");
     display: none;
 }
 
 .find_element3{
-    background-image: url("../img/search/level1-item3-hide.png");
+    background-image: url("../img/cargo1/menu_images/engine-hide.png");
     display: none;
 }
 
 .find_element4{
-    background-image: url("../img/search/level1-item4-hide.png");
+    background-image: url("../img/cargo1/menu_images/magnet-hide.png");
     display: none;
 }
 
 .find_element5{
-    background-image: url("../img/search/level1-item5-hide.png");
+    background-image: url("../img/cargo1/menu_images/magnetman-hide.png");
     display: none;
 }
 
 .find_element6{
-    background-image: url("../img/search/level1-item6-hide.png");
+    background-image: url("../img/cargo1/menu_images/magnetto-hide.png");
     display: none;
 }
 
 .find_element7{
-    background-image: url("../img/search/level1-item7-hide.png");
+    background-image: url("../img/cargo1/menu_images/neocube-hide.png");
     display: none;
 }
 
 .find_element8{
-    background-image: url("../img/search/level1-item8-hide.png");
+    background-image: url("../img/cargo1/menu_images/pokemon-hide.png");
     display: none;
 }
 
 .find_element9{
-    background-image: url("../img/search/level1-item9-hide.png");
+    background-image: url("../img/cargo1/menu_images/sound-hide.png");
     display: none;
 }
 
 .find_element10{
-    background-image: url("../img/search/level1-item10-hide.png");
+    background-image: url("../img/cargo1/menu_images/ua-hide.png");
     display: none;
 }
 

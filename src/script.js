@@ -375,8 +375,8 @@ $(document).ready(function () {
 
         $.getScript("./src/javascript.js")
             .done(function () {
-
-                if (launchGeraLevel1()) {
+                var lvl = 1
+                if (launchGeraLevel1(lvl)) {
 
                 } else {
                     activateUserMovement();
