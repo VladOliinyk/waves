@@ -275,6 +275,7 @@ function launchGeraLevel10() {
 
             });
         $('#element').pietimer('start');
+        
     });
 
     function stopAndHideGeraLevel1() {

@@ -1,6 +1,6 @@
 var startTimer = 150;
 var findItemPrize = 5; // coins count when gamer find one hidden item
-
+var countElements = 0;
 
 function launchGeraLevel1(lvl) {
     
@@ -18,7 +18,33 @@ function launchGeraLevel1(lvl) {
                 "background-repeat": "no-repeat"
             });
 
+
             addSilverCoins(findItemPrize);
+            countElements++;
+
+            if (countElements == 5) {
+                $('#element').pietimer('pause');
+                var modal = $('#searchOverModalBox');
+                var backToAdvantureBtn = $('#backToAdvanture');
+                var buy10secBtn = $('#buy10seconds');
+                showSwarchOverMenu()
+                function showSwarchOverMenu() {
+                    modal.css({display: "block"});
+                    buy10secBtn.css({display: "none"})
+                }
+
+                function hideSwarchOverMenu() {
+                    modal.css({display: "none"});
+                }
+
+                backToAdvantureBtn.click(function () {
+                    console.log("backToAdvanture");
+                    hideSwarchOverMenu();
+                    $("#sashaMenu").css({display: "none"})
+                    stopAndHideGeraLevel1();
+                });
+                }
+
         });
     });
 
@@ -137,6 +163,7 @@ function launchGeraLevel1(lvl) {
             });
         $('#element').pietimer('start');
     });
+
 
     function stopAndHideGeraLevel1() {
         $('#element').pietimer('pause');
