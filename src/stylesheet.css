@@ -97,6 +97,87 @@
     left: 740px;
     top: 360px;
 }
+.img_lvl_2_1 {
+    background-image: url("../img/cargo2/bat x=714 y=60.png");
+    width: 105px;
+    height: 48px;
+    left: 714px;
+    top: 60px;
+
+}
+
+.img_lvl_2_2 {
+    background-image: url("../img/cargo2/bee x=1000 y=388.png");
+    width: 90px;
+    height: 63px;
+    left: 1000px;
+    top: 388px;
+}
+
+.img_lvl_2_3 {
+    background-image: url("../img/cargo2/book x=314 y=97.png");
+    width: 64px;
+    height: 91px;
+    left: 314px;
+    top: 97px;
+}
+
+.img_lvl_2_4 {
+    background-image: url("../img/cargo2/dolphin  x=1000 y=168.png");
+    width: 114px;
+    height: 105px;
+    left: 1000px;
+    top: 168px;
+}
+
+.img_lvl_2_5 {
+    background-image: url("../img/cargo2/owll x=435 y=220.png");
+    width: 57px;
+    height: 136px;
+    left: 435px;
+    top: 220px;
+}
+
+.img_lvl_2_6 {
+    background-image: url("../img/cargo2/submarin x=866 y=26.png");
+    width: 158px;
+    height: 48px;
+    left: 866px;
+    top: 26px;
+}
+
+.img_lvl_2_7 {
+    background-image: url("../img/cargo2/yellowsub x=258 y=300.png");
+    width: 122px;
+    height: 72px;
+    left: 258px;
+    top: 300px;
+}
+
+.img_lvl_2_8 {
+    background-image: url("../img/cargo2/kasatka x=150 y=37.png");
+    width: 82px;
+    height: 60px;
+    left: 157px;
+    top: 37px;
+}
+
+.img_lvl_2_9 {
+    background-image: url("../img/cargo2/ear x=186 y=148.png");
+    width: 46px;
+    height: 81px;
+    left: 186px;
+    top: 148px;
+
+}
+
+.img_lvl_2_10 {
+    background-image: url("../img/cargo2/batman x=435 y=480.png");
+    width: 62px;
+    height: 96px;
+    left: 435px;
+    top: 480px;
+}
 
 .img_position {
     /*margin: 0 10%;*/
@@ -163,56 +244,105 @@ body {
     height: 100px;
     float: left;
 }
-.find_element1{
+.find_element_lvl1_1{
     background-image: url("../img/cargo1/menu_images/cardreader-hide.png");
     display: none;
 }
 
-.find_element2{
+.find_element_lvl1_2{
     background-image: url("../img/cargo1/menu_images/compass-hide.png");
     display: none;
 }
 
-.find_element3{
+.find_element_lvl1_3{
     background-image: url("../img/cargo1/menu_images/engine-hide.png");
     display: none;
 }
 
-.find_element4{
+.find_element_lvl1_4{
     background-image: url("../img/cargo1/menu_images/magnet-hide.png");
     display: none;
 }
 
-.find_element5{
+.find_element_lvl1_5{
     background-image: url("../img/cargo1/menu_images/magnetman-hide.png");
     display: none;
 }
 
-.find_element6{
+.find_element_lvl1_6{
     background-image: url("../img/cargo1/menu_images/magnetto-hide.png");
     display: none;
 }
 
-.find_element7{
+.find_element_lvl1_7{
     background-image: url("../img/cargo1/menu_images/neocube-hide.png");
     display: none;
 }
 
-.find_element8{
+.find_element_lvl1_8{
     background-image: url("../img/cargo1/menu_images/pokemon-hide.png");
     display: none;
 }
 
-.find_element9{
+.find_element_lvl1_9{
     background-image: url("../img/cargo1/menu_images/sound-hide.png");
     display: none;
 }
 
-.find_element10{
+.find_element_lvl1_10{
     background-image: url("../img/cargo1/menu_images/ua-hide.png");
     display: none;
 }
 
+.find_element_lvl2_1{
+    background-image: url("../img/cargo2/menu_images/bat-hide.png");
+    display: none;
+}
+
+.find_element_lvl2_2{
+    background-image: url("../img/cargo2/menu_images/bee-hide.png");
+    display: none;
+}
+
+.find_element_lvl2_3{
+    background-image: url("../img/cargo2/menu_images/book-hide.png");
+    display: none;
+}
+
+.find_element_lvl2_4{
+    background-image: url("../img/cargo2/menu_images/dolphin-hide.png");
+    display: none;
+}
+
+.find_element_lvl2_5{
+    background-image: url("../img/cargo2/menu_images/owll-hide.png");
+    display: none;
+}
+
+.find_element_lvl2_6{
+    background-image: url("../img/cargo2/menu_images/submarin-hide.png");
+    display: none;
+}
+
+.find_element_lvl2_7{
+    background-image: url("../img/cargo2/menu_images/yellowsub-hide.png");
+    display: none;
+}
+
+.find_element_lvl2_8{
+    background-image: url("../img/cargo2/menu_images/kasatka-hide.png");
+    display: none;
+}
+
+.find_element_lvl2_9{
+    background-image: url("../img/cargo2/menu_images/ear-hide.png");
+    display: none;
+}
+
+.find_element_lvl2_10{
+    background-image: url("../img/cargo2/menu_images/batman-hide.png");
+    display: none;
+}
 #bottom-box-5 {
     display: none;
 }

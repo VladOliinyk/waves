@@ -18,8 +18,8 @@ function launchGeraLevel1(lvl) {
             aud.src = './sound/find_cargo_element.mp3';
             aud.play();
             
-            $(".find_element"+$(this).attr('name')).css({
-                "background-image": 'url("./img/cargo1/menu_images/level'+lvl+'-item'+$(this).attr('name')+'-show.png")',
+            $(".find_element_lvl" + lvl + "_"+$(this).attr('name')).css({
+                "background-image": 'url("./img/cargo'+lvl+'/menu_images/level'+lvl+'-item'+$(this).attr('name')+'-show.png")',
                 "background-repeat": "no-repeat"
             });
 
@@ -81,16 +81,16 @@ function launchGeraLevel1(lvl) {
     var items = [".img_lvl_"+lvl+"_1", ".img_lvl_"+lvl+"_2", ".img_lvl_"+lvl+"_3", ".img_lvl_"+lvl+"_4",
         ".img_lvl_"+lvl+"_5", ".img_lvl_"+lvl+"_6", ".img_lvl_"+lvl+"_7", ".img_lvl_"+lvl+"_8", ".img_lvl_"+lvl+"_9",
         ".img_lvl_"+lvl+"_10"];
-    var fantoms = [".find_element1",
-        ".find_element2",
-        ".find_element3",
-        ".find_element4",
-        ".find_element5",
-        ".find_element6",
-        ".find_element7",
-        ".find_element8",
-        ".find_element9",
-        ".find_element10"];
+    var fantoms = [".find_element_lvl"+lvl+"_1",
+        ".find_element_lvl"+lvl+"_2",
+        ".find_element_lvl"+lvl+"_3",
+        ".find_element_lvl"+lvl+"_4",
+        ".find_element_lvl"+lvl+"_5",
+        ".find_element_lvl"+lvl+"_6",
+        ".find_element_lvl"+lvl+"_7",
+        ".find_element_lvl"+lvl+"_8",
+        ".find_element_lvl"+lvl+"_9",
+        ".find_element_lvl"+lvl+"_10"];
 
     var randNumbers = [];
 
