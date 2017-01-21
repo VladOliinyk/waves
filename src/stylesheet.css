@@ -178,6 +178,87 @@
     left: 435px;
     top: 480px;
 }
+.img_lvl_3_1 {
+    background-image: url("../img/cargo3/bandura x=652 y=85.png");
+    width: 105px;
+    height: 48px;
+    left: 714px;
+    top: 60px;
+
+}
+
+.img_lvl_3_2 {
+    background-image: url("../img/cargo3/baraban x=947 y=220.png");
+    width: 90px;
+    height: 63px;
+    left: 1000px;
+    top: 388px;
+}
+
+.img_lvl_3_3 {
+    background-image: url("../img/cargo3/fleita x=988 y=280.png");
+    width: 64px;
+    height: 91px;
+    left: 314px;
+    top: 97px;
+}
+
+.img_lvl_3_4 {
+    background-image: url("../img/cargo3/guitar x=824 y=94.png");
+    width: 114px;
+    height: 105px;
+    left: 1000px;
+    top: 168px;
+}
+
+.img_lvl_3_5 {
+    background-image: url("../img/cargo3/headphones x=290 y=334.png");
+    width: 57px;
+    height: 136px;
+    left: 435px;
+    top: 220px;
+}
+
+.img_lvl_3_6 {
+    background-image: url("../img/cargo3/kast x=200  y=19.png");
+    width: 158px;
+    height: 48px;
+    left: 866px;
+    top: 26px;
+}
+
+.img_lvl_3_7 {
+    background-image: url("../img/cargo3/key x=300 y=67.png");
+    width: 122px;
+    height: 72px;
+    left: 258px;
+    top: 300px;
+}
+
+.img_lvl_3_8 {
+    background-image: url("../img/cargo3/keyboard x=788 y=280.png");
+    width: 82px;
+    height: 60px;
+    left: 157px;
+    top: 37px;
+}
+
+.img_lvl_3_9 {
+    background-image: url("../img/cargo3/marakasy x=520 y=150.png");
+    width: 46px;
+    height: 81px;
+    left: 186px;
+    top: 148px;
+
+}
+
+.img_lvl_3_10 {
+    background-image: url("../img/cargo3/violin x=410 y=185.png");
+    width: 62px;
+    height: 96px;
+    left: 435px;
+    top: 480px;
+}
 
 .img_position {
     /*margin: 0 10%;*/
@@ -341,6 +422,55 @@ body {
 
 .find_element_lvl2_10{
     background-image: url("../img/cargo2/menu_images/batman-hide.png");
+    display: none;
+}
+.find_element_lvl3_1{
+    background-image: url("../img/cargo3/menu_images/level3-item9-hide.png");
+    display: none;
+}
+
+.find_element_lvl3_2{
+    background-image: url("../img/cargo3/menu_images/level3-item10-hide.png");
+    display: none;
+}
+
+.find_element_lvl3_3{
+    background-image: url("../img/cargo3/menu_images/level3-item1-hide.png");
+    display: none;
+}
+
+.find_element_lvl3_4{
+    background-image: url("../img/cargo3/menu_images/level3-item2-hide.png");
+    display: none;
+}
+
+.find_element_lvl3_5{
+    background-image: url("../img/cargo3/menu_images/level3-item3-hide.png");
+    display: none;
+}
+
+.find_element_lvl3_6{
+    background-image: url("../img/cargo3/menu_images/level3-item4-hide.png");
+    display: none;
+}
+
+.find_element_lvl3_7{
+    background-image: url("../img/cargo3/menu_images/level3-item5-hide.png");
+    display: none;
+}
+
+.find_element_lvl3_8{
+    background-image: url("../img/cargo3/menu_images/level3-item6-hide.png");
+    display: none;
+}
+
+.find_element_lvl3_9{
+    background-image: url("../img/cargo3/menu_images/level3-item7-hide.png");
+    display: none;
+}
+
+.find_element_lvl3_10{
+    background-image: url("../img/cargo3/menu_images/level3-item8-hide.png");
     display: none;
 }
 #bottom-box-5 {
