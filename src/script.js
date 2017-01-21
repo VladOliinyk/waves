@@ -1,4 +1,3 @@
-
 var gamer_step = 50;
 var gamer_step_time = 50;
 var gamer_silver_coins = 20;
@@ -7,13 +6,19 @@ var gamer_gold_coins = 1;
 var gameActive = true;
 
 
+var gmrX = 2;
+var gmrY = 2;
 
-var gmrX = 1;
-var gmrY = 0;
-
+var gmrLook = "bot";
+var degre = -90;
 
 
 $(document).ready(function () {
+
+    $('#gamer').css({
+        left: 50 * gmrX,
+        top: 50 * gmrY
+    });
 
     $('#searchField').css({display: "none"});
 
@@ -65,12 +70,12 @@ $(document).ready(function () {
         var topRange = parseInt(gamer_div.css("top"));
 
         if (direction == "left") {
-            gamer_div.css({"background-image": 'url("./img/gamer/gamer_l.png")'});
 
             if (!canMoveInLevel1(direction)) {
                 return;
             }
 
+            gamer_div.css({transform: 'rotate(90deg)'});
 
             if (leftRange >= 1) {
                 gamer_div.finish();
@@ -87,7 +92,8 @@ $(document).ready(function () {
         }
 
         if (direction == "right") {
-            gamer_div.css({"background-image": 'url("./img/gamer/gamer_r.png")'});
+
+            gamer_div.css({transform: 'rotate(-90deg)'});
 
             if (!canMoveInLevel1(direction)) {
                 return;
@@ -109,7 +115,8 @@ $(document).ready(function () {
         }
 
         if (direction == "top") {
-            gamer_div.css({"background-image": 'url("./img/gamer/gamer_t.png")'});
+
+            gamer_div.css({transform: 'rotate(180deg)'});
 
             if (!canMoveInLevel1(direction)) {
                 return;
@@ -131,7 +138,8 @@ $(document).ready(function () {
         }
 
         if (direction == "down") {
-            gamer_div.css({"background-image": 'url("./img/gamer/gamer_b.png")'});
+
+            gamer_div.css({transform: 'rotate(0deg)'});
 
             if (!canMoveInLevel1(direction)) {
                 return;
@@ -165,68 +173,31 @@ $(document).ready(function () {
     }
 
     function awardIn() {
-        var award = level1_award_map[gmrY][gmrX];
+        var award = ship_01_award_map[gmrY][gmrX];
         // 2 - chest
         // 3 - coin
         if (award == 3) {
-            level1_award_map[gmrY][gmrX] = 0;
+            ship_01_award_map[gmrY][gmrX] = 0;
         }
         return award;
     }
 
 
-
-    var dirt__ = "./img/level1/snow/dirt.png";
-    var snow__ = "./img/level1/snow/snow.png";
-
-    var gs_t__ = "./img/level1/snow/grass_snow_t.png";
-    var gs_l__ = "./img/level1/snow/grass_snow_l.png";
-    var gs_b__ = "./img/level1/snow/grass_snow_b.png";
-    var gs_r__ = "./img/level1/snow/grass_snow_r.png";
-
-    var gs_tr_ = "./img/level1/snow/grass_snow_tr.png";
-    var gs_br_ = "./img/level1/snow/grass_snow_br.png";
-    var gs_bl_ = "./img/level1/snow/grass_snow_bl.png";
-    var gs_tl_ = "./img/level1/snow/grass_snow_tl.png";
-
-    var gs_trc = "./img/level1/snow/grass_snow_trc.png";
-    var gs_brc = "./img/level1/snow/grass_snow_brc.png";
-    var gs_blc = "./img/level1/snow/grass_snow_blc.png";
-    var gs_tlc = "./img/level1/snow/grass_snow_tlc.png";
-
-    var search = "./img/level1/snow/search.png";
-
-
-    var level1 = [
-        [gs_r__, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__],
-        [gs_r__, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, gs_brc, gs_b__, gs_b__, gs_blc, dirt__, dirt__, dirt__, dirt__, dirt__],
-        [gs_r__, snow__, snow__, gs_bl_, gs_b__, gs_b__, gs_b__, gs_b__, gs_b__, gs_b__, gs_b__, gs_b__, gs_b__, gs_b__, gs_b__, gs_br_, snow__, snow__, gs_bl_, gs_b__, gs_b__, gs_b__, gs_blc, dirt__],
-        [gs_r__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, gs_l__, dirt__],
-        [gs_r__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, snow__, gs_l__, dirt__],
-        [gs_trc, gs_t__, gs_t__, gs_t__, gs_t__, gs_tr_, snow__, snow__, gs_tl_, gs_t__, gs_t__, gs_t__, gs_t__, gs_t__, gs_t__, gs_tr_, snow__, snow__, gs_tl_, gs_t__, gs_t__, gs_t__, gs_tlc, dirt__],
-        [dirt__, dirt__, dirt__, dirt__, dirt__, gs_r__, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, gs_r__, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__],
-        [dirt__, dirt__, gs_brc, gs_b__, gs_b__, gs_br_, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, gs_r__, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__],
-        [dirt__, dirt__, gs_r__, snow__, snow__, snow__, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, gs_r__, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__],
-        [dirt__, dirt__, gs_r__, snow__, snow__, snow__, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, gs_r__, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__],
-        [dirt__, dirt__, gs_r__, snow__, snow__, snow__, gs_tl_, gs_t__, gs_tlc, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, gs_r__, snow__, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__],
-        [dirt__, dirt__, gs_trc, gs_t__, gs_t__, gs_t__, gs_tlc, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, dirt__, gs_r__, search, snow__, gs_l__, dirt__, dirt__, dirt__, dirt__, dirt__]
-    ];
-
     // 1 – closed area
     // 0 – free to move
-    var level1_way_map = [
-        [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
-        [1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1]
+    var ship_01_way_map = [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     ];
 
     // 1 – closed area
@@ -234,7 +205,7 @@ $(document).ready(function () {
     // 2 – chest
     // 3 – free silver coin
     // 666 – gera game
-    var level1_award_map = [
+    var ship_01_award_map = [
         [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
@@ -264,7 +235,7 @@ $(document).ready(function () {
     function getCurrentIdHTML(row, col) {
         var html = "";
 
-        if (level1_award_map[row][col] == 3) {
+        if (ship_01_award_map[row][col] == 3) {
             html = "<img src='./img/coinGif2.gif' width='50'>";
         }
 
@@ -285,7 +256,7 @@ $(document).ready(function () {
                 return answer;
             }
 
-            if (level1_way_map[gmrY][gmrX + 1] == 0) {
+            if (ship_01_way_map[gmrY][gmrX + 1] == 0) {
                 answer = true;
             } else {
                 answer = false;
@@ -300,7 +271,7 @@ $(document).ready(function () {
                 return answer;
             }
 
-            if (level1_way_map[gmrY][gmrX - 1] == 0) {
+            if (ship_01_way_map[gmrY][gmrX - 1] == 0) {
                 answer = true;
             } else {
                 answer = false;
@@ -315,7 +286,7 @@ $(document).ready(function () {
                 return answer;
             }
 
-            if (level1_way_map[gmrY - 1][gmrX] == 0) {
+            if (ship_01_way_map[gmrY - 1][gmrX] == 0) {
                 answer = true;
             } else {
                 answer = false;
@@ -330,7 +301,7 @@ $(document).ready(function () {
                 return answer;
             }
 
-            if (level1_way_map[gmrY + 1][gmrX] == 0) {
+            if (ship_01_way_map[gmrY + 1][gmrX] == 0) {
                 answer = true;
             } else {
                 answer = false;
@@ -340,23 +311,6 @@ $(document).ready(function () {
 
         return answer;
     }
-
-
-    console.log("BACKGROUND LOADING: ");
-    for (bg_row = 0; bg_row < 12; bg_row++) {
-
-        for (bg_col = 0; bg_col < 24; bg_col++) {
-
-            currentID = "gamearea_" + bg_row + "_" + bg_col;
-
-            $("#" + currentID).css({
-                "background-image": 'url("' + level1[bg_row][bg_col] + '")'
-            });
-
-        }
-
-    }
-    console.log("BACKGROUND LOADING SUCCESSFULLY COMPLETE");
 
 
     $('#menuModalBtn').click(function () {
@@ -391,7 +345,6 @@ $(document).ready(function () {
 
 
 }); // document ready end
-
 
 
 function updateSilverCoinsCount(count) {
@@ -439,8 +392,6 @@ function updateCoordsLabel() {
     var str = "Center position: (" + gamerX + ":" + gamerY + ")";
     $("#coords").val(str);
 }
-
-
 
 
 function addSilverCoins(count) {
