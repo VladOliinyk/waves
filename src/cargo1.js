@@ -96,7 +96,8 @@ function launchGeraLevel1(lvl) {
             $('img').magnify({
                 speed: 100, // fade in/out speed
                 timeout: -1, // timeout for mobile
-                src: './img/search/level' + lvl + '-full-150.png', // The URI of the large image that will be shown in the magnifying lens.
+                // src: './img/search/level' + lvl + '-full-150.png', // The URI of the large image that will be shown in the magnifying lens.
+                src: './img/cargo'+ lvl +'/cargo'+ lvl +'_150.png',
                 onload: function () {
                 } // callback
             });
