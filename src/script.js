@@ -5,7 +5,7 @@ var gamer_gold_coins = 1;
 
 var gmrX = 2;
 var gmrY = 2;
-
+var completeLvl = 0;
 var gmrLook = "bot";
 var degre = -90;
 
@@ -162,6 +162,7 @@ $(document).ready(function () {
             updateSilverCoinsCount(addCoin);
         }
         if (award == 666) {
+            completeLvl++;
             launchGeraGame();
         }
 
@@ -207,7 +208,7 @@ $(document).ready(function () {
         [1, 1, 0, 0, 0, 666, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 666, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -317,12 +318,12 @@ $(document).ready(function () {
         $("#gameScene").fadeOut("slow", function () {
             console.log("gamearea hidden");
 
-            $('.field'+2).css({display: "block"});
+            $('.field' + completeLvl).css({display: "block"});
 
         });
         $('#bottom-box-5').css({display: "block"});
 
-        launchGeraLevel1(2)
+        launchGeraLevel1(completeLvl)
     }
 
 

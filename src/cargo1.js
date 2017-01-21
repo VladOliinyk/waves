@@ -1,25 +1,29 @@
 var startTimer = 150;
 var findItemPrize = 5; // coins count when gamer find one hidden item
-var countElements = 0;
 
 function launchGeraLevel1(lvl) {
-    
+    var countElements = 0;
 
-    $(".img_click").click(function () {
-    $(this).css({zIndex: 9999});
+    $('#sashaMenu').css({'display': 'block'});
+    $('.menu_' + lvl).css({'display': 'block'});
+
+    $('.img_click').unbind('click').click(function () {
+
+        var aud = new Audio();
+        aud.src = './sound/find_cargo_element.mp3';
+        aud.play();
+        $(this).css({zIndex: 9999});
         $(this).animate({
             top: "0",
             left: "1000"
 
         }, 1500, function () {
+            console.log('test');
             $(this).css({display: "none"});
-        
-            var aud = new Audio();
-            aud.src = './sound/find_cargo_element.mp3';
-            aud.play();
-            
-            $(".find_element_lvl" + lvl + "_"+$(this).attr('name')).css({
-                "background-image": 'url("./img/cargo'+lvl+'/menu_images/level'+lvl+'-item'+$(this).attr('name')+'-show.png")',
+
+
+            $(".find_element_lvl" + lvl + "_" + $(this).attr('name')).css({
+                "background-image": 'url("./img/cargo' + lvl + '/menu_images/level' + lvl + '-item' + $(this).attr('name') + '-show.png")',
                 "background-repeat": "no-repeat"
             });
 
@@ -32,25 +36,47 @@ function launchGeraLevel1(lvl) {
                 var modal = $('#searchOverModalBox');
                 var backToAdvantureBtn = $('#backToAdvanture');
                 var buy10secBtn = $('#buy10seconds');
-                showSwarchOverMenu()
+
+                setTimeout(showWinElement, 2000);
+
                 function showSwarchOverMenu() {
                     modal.css({display: "block"});
-                    buy10secBtn.css({display: "none"})
-                    $('.congrat').css({display: "block"})
-                    $('.fail').css({display: "none"})
+                    buy10secBtn.css({display: "none"});
+                    $('.congrat').css({display: "block"});
+                    $('.fail').css({display: "none"});
+                    $(".panel_lvl" + lvl).remove();
+
                 }
 
                 function hideSwarchOverMenu() {
                     modal.css({display: "none"});
                 }
 
+                function showWinElement() {
+                    $('.test').css({
+                        "background-image": 'url("./img/shipControlPanel/controlPanel.png")'
+                    });
+                    $('img').css({display: 'none'});
+                    $('.panel_lvl1').css({visibility: 'visible'});
+                    $('.panel_lvl2').css({visibility: 'visible'});
+                    $('.panel_lvl3').css({visibility: 'visible'});
+                    $('.panel_lvl4').css({visibility: 'visible'});
+                    $('.panel_lvl5').css({visibility: 'visible'});
+                    setTimeout(function () {
+                        $('.panel_lvl' + lvl).fadeOut();
+                        setTimeout(showSwarchOverMenu, 2000)
+                    }, 1000)
+                }
+
                 backToAdvantureBtn.click(function () {
                     console.log("backToAdvanture");
                     hideSwarchOverMenu();
-                    $("#sashaMenu").css({display: "none"})
+                    $("#sashaMenu").css({display: "none"});
+                    $('.menu_' + lvl).remove();
+                    $('.field' + lvl).remove();
                     stopAndHideGeraLevel1();
                 });
-                }
+            }
 
         });
     });
@@ -69,7 +95,7 @@ function launchGeraLevel1(lvl) {
             $('img').magnify({
                 speed: 100, // fade in/out speed
                 timeout: -1, // timeout for mobile
-                src: './img/search/level'+lvl+'-full-150.png', // The URI of the large image that will be shown in the magnifying lens.
+                src: './img/search/level' + lvl + '-full-150.png', // The URI of the large image that will be shown in the magnifying lens.
                 onload: function () {
                 } // callback
             });
@@ -78,19 +104,19 @@ function launchGeraLevel1(lvl) {
     });
 
 
-    var items = [".img_lvl_"+lvl+"_1", ".img_lvl_"+lvl+"_2", ".img_lvl_"+lvl+"_3", ".img_lvl_"+lvl+"_4",
-        ".img_lvl_"+lvl+"_5", ".img_lvl_"+lvl+"_6", ".img_lvl_"+lvl+"_7", ".img_lvl_"+lvl+"_8", ".img_lvl_"+lvl+"_9",
-        ".img_lvl_"+lvl+"_10"];
-    var fantoms = [".find_element_lvl"+lvl+"_1",
-        ".find_element_lvl"+lvl+"_2",
-        ".find_element_lvl"+lvl+"_3",
-        ".find_element_lvl"+lvl+"_4",
-        ".find_element_lvl"+lvl+"_5",
-        ".find_element_lvl"+lvl+"_6",
-        ".find_element_lvl"+lvl+"_7",
-        ".find_element_lvl"+lvl+"_8",
-        ".find_element_lvl"+lvl+"_9",
-        ".find_element_lvl"+lvl+"_10"];
+    var items = [".img_lvl_" + lvl + "_1", ".img_lvl_" + lvl + "_2", ".img_lvl_" + lvl + "_3", ".img_lvl_" + lvl + "_4",
+        ".img_lvl_" + lvl + "_5", ".img_lvl_" + lvl + "_6", ".img_lvl_" + lvl + "_7", ".img_lvl_" + lvl + "_8", ".img_lvl_" + lvl + "_9",
+        ".img_lvl_" + lvl + "_10"];
+    var fantoms = [".find_element_lvl" + lvl + "_1",
+        ".find_element_lvl" + lvl + "_2",
+        ".find_element_lvl" + lvl + "_3",
+        ".find_element_lvl" + lvl + "_4",
+        ".find_element_lvl" + lvl + "_5",
+        ".find_element_lvl" + lvl + "_6",
+        ".find_element_lvl" + lvl + "_7",
+        ".find_element_lvl" + lvl + "_8",
+        ".find_element_lvl" + lvl + "_9",
+        ".find_element_lvl" + lvl + "_10"];
 
     var randNumbers = [];
 
@@ -143,13 +169,13 @@ function launchGeraLevel1(lvl) {
     function hideSwarchOverMenu() {
         modal.css({display: "none"});
     }
-
-    backToAdvantureBtn.click(function () {
-        console.log("backToAdvanture");
-        hideSwarchOverMenu();
-
-        stopAndHideGeraLevel1();
-    });
+    //
+    // backToAdvantureBtn.click(function () {
+    //     console.log("backToAdvanture");
+    //     hideSwarchOverMenu();
+    //
+    //     stopAndHideGeraLevel1();
+    // });
 
     buy10secBtn.click(function () {
         hideSwarchOverMenu();
@@ -177,15 +203,23 @@ function launchGeraLevel1(lvl) {
         $("#gameScene").fadeIn("slow", function () {
             console.log("gamearea show");
             $('.searchField').css({display: "none"});
-
+            $('.test').css({
+                'background-image': 'url("./img/ship/ship_01.png"), url("./img/ship/water.gif")'
+            });
+            $('img').css({display: 'block'});
+            $('.panel_lvl1').css({visibility: 'hidden'});
+            $('.panel_lvl2').css({visibility: 'hidden'});
+            $('.panel_lvl3').css({visibility: 'hidden'});
+            $('.panel_lvl4').css({visibility: 'hidden'});
+            $('.panel_lvl5').css({visibility: 'hidden'});
             return 0;
         });
     }
 
     $('.searchField').dblclick(function () {
         $('body').css({pointerEvents: 'none'});
-        $('html,body').css('cursor','no-drop ');
-        setTimeout(function(){
+        $('html,body').css('cursor', 'no-drop ');
+        setTimeout(function () {
             $('body').css({pointerEvents: 'auto', cursor: 'default'});
         }, 2500)
     })

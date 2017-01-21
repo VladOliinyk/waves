@@ -172,3 +172,60 @@ body {
 .congrat{
     display: none;
 }
+.panel_lvl1{
+    background-image:  url("../img/shipControlPanel/controlPanel_01 x=400.5 y=21.5.png");
+    left: 400px;
+    position: absolute;
+    height: 379px;
+    width: 357px;
+    top: 21.5px;
+    visibility: hidden;
+    background-repeat: no-repeat;
+}
+.panel_lvl2{
+    background-image:  url("../img/shipControlPanel/controlPanel_02 x=750 y=45.png");
+    left: 750px;
+    position: absolute;
+    height: 174px;
+    width: 460px;
+    top: 45px;
+    visibility: hidden;
+    background-repeat: no-repeat;
+
+}
+.panel_lvl3{
+    background-image:  url("../img/shipControlPanel/controlPanel_03 x=0 y=2.png");
+    left: 0px;
+    position: absolute;
+    height: 379px;
+    width: 400px;
+    top: 2px;
+    visibility: hidden;
+    background-repeat: no-repeat;
+
+}
+.panel_lvl4{
+    background-image:  url("../img/shipControlPanel/controlPanel_04 x=116 y=253.png");
+    left: 116px;
+    position: absolute;
+    height: 288px;
+    width: 351px;
+    top: 253px;
+    visibility: hidden;
+    background-repeat: no-repeat;
+
+}
+.panel_lvl5{
+    background-image:  url("../img/shipControlPanel/controlPanel_05  x=795 y=254.png");
+    left: 795px;
+    position: absolute;
+    height: 219px;
+    width: 315px;
+    top: 254px;
+    visibility: hidden;
+    background-repeat: no-repeat;
+
+}
+.menu_1, .menu_2{
+    display: none;
+}
