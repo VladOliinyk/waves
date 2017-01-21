@@ -3,9 +3,6 @@ var gamer_step_time = 50;
 var gamer_silver_coins = 20;
 var gamer_gold_coins = 1;
 
-var gameActive = true;
-
-
 var gmrX = 2;
 var gmrY = 2;
 
@@ -26,8 +23,7 @@ $(document).ready(function () {
     updateGoldCoinsCount(0);
 
     $(document).keydown(function (e) {
-
-        if (gameActive) {
+        if ($("#gameScene").css('display') == 'block') {
 
             var keynum;
 
@@ -320,27 +316,13 @@ $(document).ready(function () {
     function launchGeraGame() {
         $("#gameScene").fadeOut("slow", function () {
             console.log("gamearea hidden");
-            gameActive = false;
 
             $('#searchField').css({display: "block"});
 
         });
         $('#bottom-box-5').css({display: "block"});
 
-        $.getScript("./src/javascript.js")
-            .done(function () {
-                var lvl = 1
-                if (launchGeraLevel1(lvl)) {
-
-                } else {
-                    activateUserMovement();
-                }
-            })
-    }
-
-
-    function activateUserMovement() {
-        gameActive = true;
+        launchGeraLevel1(1)
     }
 
 
