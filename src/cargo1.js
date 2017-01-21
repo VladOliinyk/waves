@@ -1,5 +1,6 @@
 var startTimer = 150;
 var findItemPrize = 5; // coins count when gamer find one hidden item
+var ship = '01';
 
 function launchGeraLevel1(lvl) {
     var countElements = 0;
@@ -204,7 +205,7 @@ function launchGeraLevel1(lvl) {
             console.log("gamearea show");
             $('.searchField').css({display: "none"});
             $('.test').css({
-                'background-image': 'url("./img/ship/ship_01.png"), url("./img/ship/water.gif")'
+                'background-image': 'url("./img/ship_bg/ship_' + ship + '.png"), url("./img/ship_bg/water.gif")'
             });
             $('img').css({display: 'block'});
             $('.panel_lvl1').css({visibility: 'hidden'});
