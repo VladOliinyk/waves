@@ -14,7 +14,7 @@ function launchGeraLevel1(lvl) {
         }, 1500, function () {
             $(this).css({display: "none"})
             $(".find_element"+$(this).attr('name')).css({
-                "background-image": 'url("./img/search/level'+lvl+'-item1'+$(this).attr('name')+'-show.png")',
+                "background-image": 'url("./img/cargo1/menu_images/level'+lvl+'-item'+$(this).attr('name')+'-show.png")',
                 "background-repeat": "no-repeat"
             });
 
