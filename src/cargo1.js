@@ -1,4 +1,4 @@
-var startTimer = 150;
+var startTimer = 10;
 var findItemPrize = 5; // coins count when gamer find one hidden item
 
 function launchGeraLevel1(lvl, ship) {
@@ -170,13 +170,13 @@ function launchGeraLevel1(lvl, ship) {
     function hideSwarchOverMenu() {
         modal.css({display: "none"});
     }
-    //
-    // backToAdvantureBtn.click(function () {
-    //     console.log("backToAdvanture");
-    //     hideSwarchOverMenu();
-    //
-    //     stopAndHideGeraLevel1();
-    // });
+
+     backToAdvantureBtn.click(function () {
+         console.log("backToAdvanture");
+         hideSwarchOverMenu();
+
+         stopAndHideGeraLevel1();
+     });
 
     buy10secBtn.click(function () {
         hideSwarchOverMenu();
@@ -192,6 +192,7 @@ function launchGeraLevel1(lvl, ship) {
                 width: 96
             },
             function () {
+                showSwarchOverMenu();
                 $(".searchField").fadeOut('slow');
 
             });
