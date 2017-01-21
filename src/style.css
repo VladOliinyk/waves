@@ -166,3 +166,9 @@ body {
     text-align: center;
     color: #ffffff;
 }
+.gmItem{
+    cursor: pointer;
+}
+.congrat{
+    display: none;
+}

@@ -12,7 +12,12 @@ function launchGeraLevel1(lvl) {
             left: "1000"
 
         }, 1500, function () {
-            $(this).css({display: "none"})
+            $(this).css({display: "none"});
+        
+            var aud = new Audio();
+            aud.src = './sound/find_cargo_element.mp3';
+            aud.play();
+            
             $(".find_element"+$(this).attr('name')).css({
                 "background-image": 'url("./img/cargo1/menu_images/level'+lvl+'-item'+$(this).attr('name')+'-show.png")',
                 "background-repeat": "no-repeat"
@@ -31,6 +36,8 @@ function launchGeraLevel1(lvl) {
                 function showSwarchOverMenu() {
                     modal.css({display: "block"});
                     buy10secBtn.css({display: "none"})
+                    $('.congrat').css({display: "block"})
+                    $('.fail').css({display: "none"})
                 }
 
                 function hideSwarchOverMenu() {
@@ -73,7 +80,7 @@ function launchGeraLevel1(lvl) {
 
     var items = [".img_lvl_"+lvl+"_1", ".img_lvl_"+lvl+"_2", ".img_lvl_"+lvl+"_3", ".img_lvl_"+lvl+"_4",
         ".img_lvl_"+lvl+"_5", ".img_lvl_"+lvl+"_6", ".img_lvl_"+lvl+"_7", ".img_lvl_"+lvl+"_8", ".img_lvl_"+lvl+"_9",
-        "img_lvl_"+lvl+"_10"];
+        ".img_lvl_"+lvl+"_10"];
     var fantoms = [".find_element1",
         ".find_element2",
         ".find_element3",
@@ -88,10 +95,10 @@ function launchGeraLevel1(lvl) {
     var randNumbers = [];
 
     for (var i = 0; i < 5; i++) {
-        var currentRandNumber = getRandomInt(0, 9);
+        var currentRandNumber = getRandomInt(0, 10);
 
         while ($.inArray(currentRandNumber, randNumbers) !== -1) {
-            currentRandNumber = getRandomInt(0, 9);
+            currentRandNumber = getRandomInt(0, 10);
         }
 
         randNumbers.push(currentRandNumber)
