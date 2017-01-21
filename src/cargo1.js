@@ -1,8 +1,7 @@
 var startTimer = 150;
 var findItemPrize = 5; // coins count when gamer find one hidden item
-var ship = '01';
 
-function launchGeraLevel1(lvl) {
+function launchGeraLevel1(lvl, ship) {
     var countElements = 0;
 
     $('#sashaMenu').css({'display': 'block'});

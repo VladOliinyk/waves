@@ -604,12 +604,12 @@ $(document).ready(function () {
         $("#gameScene").fadeOut("slow", function () {
             console.log("gamearea hidden");
 
-            $('.field' + 3).css({display: "block"});
+            $('.field' + completeLvl).css({display: "block"});
 
         });
         $('#bottom-box-5').css({display: "block"});
 
-        launchGeraLevel1(3)
+        launchGeraLevel1(completeLvl, shipPart)
     }
 
 
