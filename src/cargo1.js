@@ -163,7 +163,10 @@ function launchGeraLevel1(lvl, ship) {
     var backToAdvantureBtn = $('#backToAdvanture');
     var buy10secBtn = $('#buy10seconds');
 
-    function showSwarchOverMenu() {
+    function showSwarchOverMenu(buy) {
+        if(buy){
+            $('')
+        }
         modal.css({display: "block"});
     }
 
@@ -177,8 +180,9 @@ function launchGeraLevel1(lvl, ship) {
 
          stopAndHideGeraLevel1();
      });
-
+    var buy = false;
     buy10secBtn.click(function () {
+        buy = true
         hideSwarchOverMenu();
         addSilverCoins(-10);
         $(".searchField").fadeIn("slow", function () {
@@ -192,7 +196,7 @@ function launchGeraLevel1(lvl, ship) {
                 width: 96
             },
             function () {
-                showSwarchOverMenu();
+                showSwarchOverMenu(buy);
                 $(".searchField").fadeOut('slow');
 
             });
