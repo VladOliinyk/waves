@@ -126,7 +126,7 @@ function launchGeraLevel1(lvl) {
             width: 96
         },
         function () {
-            $("#searchField").fadeOut('slow');
+            $(".searchField").fadeOut('slow');
             showSwarchOverMenu();
         });
     $('#element').pietimer('start');
@@ -154,7 +154,7 @@ function launchGeraLevel1(lvl) {
     buy10secBtn.click(function () {
         hideSwarchOverMenu();
         addSilverCoins(-10);
-        $("#searchField").fadeIn("slow", function () {
+        $(".searchField").fadeIn("slow", function () {
 
         });
         $('#element').pietimer();
@@ -165,7 +165,7 @@ function launchGeraLevel1(lvl) {
                 width: 96
             },
             function () {
-                $("#searchField").fadeOut('slow');
+                $(".searchField").fadeOut('slow');
 
             });
         $('#element').pietimer('start');
@@ -176,13 +176,13 @@ function launchGeraLevel1(lvl) {
         $('#element').pietimer('pause');
         $("#gameScene").fadeIn("slow", function () {
             console.log("gamearea show");
-            $('#searchField').css({display: "none"});
+            $('.searchField').css({display: "none"});
 
             return 0;
         });
     }
 
-    $('#searchField').dblclick(function () {
+    $('.searchField').dblclick(function () {
         $('body').css({pointerEvents: 'none'});
         $('html,body').css('cursor','no-drop ');
         setTimeout(function(){

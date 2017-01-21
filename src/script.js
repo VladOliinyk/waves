@@ -17,7 +17,7 @@ $(document).ready(function () {
         top: 50 * gmrY
     });
 
-    $('#searchField').css({display: "none"});
+    $('.searchField').css({display: "none"});
 
     updateSilverCoinsCount(0);
     updateGoldCoinsCount(0);
@@ -317,12 +317,12 @@ $(document).ready(function () {
         $("#gameScene").fadeOut("slow", function () {
             console.log("gamearea hidden");
 
-            $('#searchField').css({display: "block"});
+            $('.field'+2).css({display: "block"});
 
         });
         $('#bottom-box-5').css({display: "block"});
 
-        launchGeraLevel1(1)
+        launchGeraLevel1(2)
     }
 
 
