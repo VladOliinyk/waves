@@ -58,7 +58,7 @@ body {
     overflow: hidden;
 
     /*background: rgba(255, 255, 255, 0);*/
-    background-image: url("../img/ship_bg/ship_02.png"), url("../img/ship_bg/water.gif");
+    background-image: url("../img/ship_bg/ship_01.png"), url("../img/ship_bg/water.gif");
 }
 .gamearea_XX {
 
