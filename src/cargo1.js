@@ -78,7 +78,7 @@ function launchGeraLevel1(lvl, ship) {
                         $('#menu').fadeOut()
                         setTimeout(function () {
                             $('#endarea').fadeOut(function () {
-                                $('#gamearea').html('<div class="results"><div class="pull_right"><div class="title">Your results</div> <div class="gold"><div class="coin_gold"></div>Gold coins ' + gamer_gold_coins + '/91</div><br><div class="silver"><div class="coin_silver"></div>Silver coins ' + gamer_silver_coins + '/135</div><br><div class="res">' + getResultText() + '</div> <br><div class="repost"> <div class="share42init" data-image="https://pp.vk.me/c637330/v637330918/2b3d1/Lg_Ahv_oqcM.jpg" data-title="Cargo Waves: The results" data-description="I have collected ' + gamer_gold_coins + '/90 gold coins and ' + gamer_silver_coins + '/125 silver coins in #CargoWawes game! Try to beat my record!" ></div> </div></div>')
+                                $('#gamearea').html('<div class="results"><div class="pull_right"><div class="title">Your results</div> <div class="gold"><div class="coin_gold"></div>Gold coins ' + gamer_gold_coins + '/91</div><br><div class="silver"><div class="coin_silver"></div>Silver coins ' + gamer_silver_coins + '/135</div><br><div class="res">' + getResultText() + '</div> <br><div class="repost"> <div class="share42init" data-image="https://pp.vk.me/c637330/v637330918/2b3d1/Lg_Ahv_oqcM.jpg" data-title="Cargo Waves: The results" data-description="I have collected ' + gamer_gold_coins + '/90 gold coins and ' + gamer_silver_coins + '/125 silver coins in #CargoWaves game! Try to beat my record!" ></div> </div></div>')
                             })
                             setTimeout(function () {
                                 showShare();
@@ -108,7 +108,7 @@ function launchGeraLevel1(lvl, ship) {
                         $('#menu').fadeOut()
                         setTimeout(function () {
                             $('#endarea').fadeOut(function () {
-                                $('#gamearea').html('<div class="results"><div class="pull_right"><div class="title">Your results</div> <div class="gold"><div class="coin_gold"></div>Gold coins ' + gamer_gold_coins + '/91</div><br><div class="silver"><div class="coin_silver"></div>Silver coins ' + gamer_silver_coins + '/135</div><br><div class="res">' + getResultText() + '</div></div></div>')
+                                $('#gamearea').html('<div class="results"><div class="pull_right"><div class="title">Your results</div> <div class="gold"><div class="coin_gold"></div>Gold coins ' + gamer_gold_coins + '/91</div><br><div class="silver"><div class="coin_silver"></div>Silver coins ' + gamer_silver_coins + '/135</div><br><div class="res">' + getResultText() + '</div> <br><div class="repost"> <div class="share42init" data-image="https://pp.vk.me/c637330/v637330918/2b3d1/Lg_Ahv_oqcM.jpg" data-title="Cargo Waves: The results" data-description="I have collected ' + gamer_gold_coins + '/90 gold coins and ' + gamer_silver_coins + '/125 silver coins in #CargoWaves game! Try to beat my record!" ></div> </div></div>')
                             })
                         }, 20000)
 
