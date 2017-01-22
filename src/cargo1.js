@@ -69,7 +69,7 @@ function launchGeraLevel1(lvl, ship) {
                     $('.panel_lvl4').css({visibility: 'visible'});
                     $('.panel_lvl5').css({visibility: 'visible'});
                     setTimeout(function () {
-                        // if(completeLvl == 5){
+                        if(completeLvl == 5){
                         $('.test').css({
                             "background-image": 'none'
                         });
@@ -85,10 +85,10 @@ function launchGeraLevel1(lvl, ship) {
                                 console.log("showShare activated")
                             }, 1000)
                         }, 20000)
-                        // } else {
-                        //     $('.panel_lvl' + lvl).fadeOut();
-                        //     setTimeout(showSwarchOverMenu, 2000)
-                        // }
+                        } else {
+                            $('.panel_lvl' + lvl).fadeOut();
+                            setTimeout(showSwarchOverMenu, 2000)
+                        }
                     }, 1000)
 
                 }
