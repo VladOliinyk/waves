@@ -192,7 +192,7 @@ $(document).ready(function () {
                         }
 
                         shipPart = '02';
-                        updateAwardMap()
+                        updateAwardMap();
                         $('#gamearea')
                             .css({'background-image': 'url("./img/ship_bg/ship_02.png"), url("./img/ship_bg/water.gif")'})
                             .fadeIn();
@@ -507,6 +507,45 @@ $(document).ready(function () {
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     ];
+
+    generateCoins();
+
+    function generateCoins(){
+        var parts = ['00', '01', '02', '10', '11', '12'];
+        for (var k=0; k<parts.length; k++) {
+
+            for (var i = 0; i < 11; i++) {
+                for (var j = 0; j < 23; j++) {
+                    console.log(eval('ship_' + parts[k] + '_award_map[i][j]'))
+
+                    if(eval('ship_' + parts[k] + '_award_map[i][j]') == 3 ){
+                        eval('ship_' + parts[k] + '_award_map[i][j]=0')
+                    }
+                }
+            }
+
+        }
+
+        for (var i=0; i<parts.length; i++){
+            var counter = 0;
+            while (counter < 3){
+                var randX = getRandomInt(0, 23);
+                var randY = getRandomInt(0, 11);
+
+                if(eval('ship_' + parts[i] + '_award_map[randY][randX]') == 0 ){
+                    eval('ship_' + parts[i] + '_award_map[randY][randX] = 3');
+                    counter++
+                }
+            }
+
+        }
+
+    }
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
     updateAwardMap();
     function updateAwardMap(){
         for (bg_row = 0; bg_row < 12; bg_row++) {
@@ -526,9 +565,8 @@ $(document).ready(function () {
 
     function getCurrentIdHTML(row, col) {
         var html = "";
-
         if (eval('ship_' + shipPart + '_award_map[row][col]') == 3) {
-            html = "<img src='./img/coinGif2.gif' width='50'>";
+            html = "<img src='./img/goldCoin.gif' width='50'>";
         }
 
         if (eval('ship_' + shipPart + '_award_map[row][col]') == 666){
@@ -625,7 +663,7 @@ $(document).ready(function () {
 
         });
         $('#bottom-box-5').css({display: "block"});
-
+        generateCoins();
         launchGeraLevel1(completeLvl, shipPart)
     }
 

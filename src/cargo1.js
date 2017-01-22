@@ -1,4 +1,4 @@
-var startTimer = 10;
+var startTimer = 60;
 var findItemPrize = 5; // coins count when gamer find one hidden item
 
 function launchGeraLevel1(lvl, ship) {
