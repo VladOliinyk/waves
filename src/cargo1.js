@@ -5,6 +5,11 @@ var extraseconds = 15;
 function launchGeraLevel1(lvl, ship) {
     var countElements = 0;
 
+    var searchAud = new Audio();
+    searchAud.src = './sound/find_cargo_bg_audio.mp3';
+    searchAud.play();
+    searchAud.volume = 0.5;
+
     $('#sashaMenu').css({'display': 'block'});
     $('.menu_' + lvl).css({'display': 'block'});
 
@@ -264,6 +269,10 @@ function launchGeraLevel1(lvl, ship) {
 
 
     function stopAndHideGeraLevel1() {
+
+        searchAud.pause();
+        searchAud.currentTime = 0;
+
         $('#element').pietimer('pause');
         $("#gameScene").fadeIn("slow", function () {
             console.log("gamearea show");
@@ -280,7 +289,7 @@ function launchGeraLevel1(lvl, ship) {
                 $('.panel_lvl5').css({visibility: 'hidden'});
 
             setTimeout(function(){
-                $(".loader").fadeOut()
+                $(".loader").fadeOut();
             }, 1500);
 
             return 0;
