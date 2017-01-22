@@ -5,7 +5,7 @@
 
 /* ---------------- */
 body{
-    background-image: url("../img/background.jpg");
+    background-image: url("../img/back.png");
 }
 @font-face {
     font-family: myCenturyGothic; /* Гарнитура шрифта */
@@ -19,6 +19,7 @@ body{
     width: 100%;
     height: 100%;
     z-index: 9999;
+    display: none;
     background: rgb(238, 238, 238) url('../img/loading.gif') no-repeat center;
 }
 
@@ -63,7 +64,7 @@ body {
     background-image: url("../img/ship_bg/ship_01.png"), url("../img/ship_bg/water.gif");
 }
 /*21019*/
-#videoarea, #startarea, #area, #endarea  {
+#videoarea, #startarea, #area, #endarea, .results  {
     position: relative;
     width: 1200px;
     height: 600px;
@@ -252,4 +253,51 @@ body {
 }
 .menu_1, .menu_2, .menu_3, .menu_4, .menu_5{
     display: none;
+}
+.results{
+    background-image: url("../img/finalScreen.png");
+}
+.pull_right{
+    width: 50%;
+    float: right;
+    text-align: center;
+    padding-top: 50px;
+}
+.title{
+    font-size: 43px;
+    font-weight: bold;
+    color: #313131;
+}
+.gold{
+    padding-top: 30px;
+    color: #a29400;
+}
+.silver{
+    padding-top: 30px;
+    color: #a2a2a2;
+}
+.res{
+    font-size: 25px;
+}
+.coin_silver{
+    background-image: url("../img/silverCoin.gif");
+    height: 50px;
+    width: 100%;
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    /* text-align: center; */
+    /* display: inline-block; */
+    background-size: contain;
+    background-position: center;
+}
+.coin_gold{
+    background-image: url("../img/goldCoin.gif");
+    height: 50px;
+    background-size: contain;
+    width: 100%;
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    /* text-align: center; */
+    /* display: inline-block; */
+    background-position: center;
 }

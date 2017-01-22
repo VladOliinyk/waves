@@ -1,4 +1,4 @@
-var startTimer = 60;
+var startTimer = 65;
 var findItemPrize = 5; // coins count when gamer find one hidden item
 var extraseconds = 15;
 
@@ -71,7 +71,11 @@ function launchGeraLevel1(lvl, ship) {
                         $('#gamearea').html('<video id="endarea" autoplay src="./video/end.mp4"> </video>')
                         $('#endarea').fadeIn()
                         $('#menu').fadeOut()
-
+                        setTimeout(function(){
+                            $('#endarea').fadeOut(function(){
+                                $('#gamearea').html('<div class="results"><div class="pull_right"><div class="title">Your results</div> <div class="gold"><div class="coin_gold"></div>Gold coins ' + gamer_gold_coins + '/91</div><br><div class="silver"><div class="coin_silver"></div>Silver coins ' + gamer_silver_coins + '/135</div><br><div class="res">' + getResultText() + '</div> <br><div class="repost">  </div></div></div>')
+                            })
+                        }, 20000)
                         } else {
                             $('.panel_lvl' + lvl).fadeOut();
                             setTimeout(showSwarchOverMenu, 2000)
@@ -92,9 +96,16 @@ function launchGeraLevel1(lvl, ship) {
                         $('#gamearea').html('<video id="endarea" autoplay src="./video/end.mp4"> </video>')
                         $('#endarea').fadeIn()
                         $('#menu').fadeOut()
+                        setTimeout(function(){
+                            $('#endarea').fadeOut(function(){
+                                $('#gamearea').html('<div class="results"><div class="pull_right"><div class="title">Your results</div> <div class="gold"><div class="coin_gold"></div>Gold coins ' + gamer_gold_coins + '/91</div><br><div class="silver"><div class="coin_silver"></div>Silver coins ' + gamer_silver_coins + '/135</div><br><div class="res">' + getResultText() + '</div></div></div>')
+                            })
+                        }, 20000)
 
                     } else{
-                        stopAndHideGeraLevel1();
+                        $(".loader").fadeIn(function(){
+                            stopAndHideGeraLevel1();
+                        })
 
                     }
 
@@ -105,6 +116,21 @@ function launchGeraLevel1(lvl, ship) {
         });
     });
 
+    function getGoldCoins(){
+        return $('#coin_gold_count').html()
+    }
+    function getSilverCoins(){
+        return $('#coin_silver_count').html()
+    }
+    function getResultText(){
+        if (gamer_gold_coins + gamer_gold_coins < 50){
+            return 'You result is not so good...'
+        } else if(gamer_gold_coins + gamer_gold_coins < 150){
+            return 'You result is good!'
+        } else{
+            return 'You are the perfect one!!!'
+        }
+    }
 
     var loopUsed = false;
 
@@ -207,7 +233,9 @@ function launchGeraLevel1(lvl, ship) {
          $("#sashaMenu").css({display: "none"});
          $('.menu_' + lvl).remove();
          $('.field' + lvl).remove();
-         stopAndHideGeraLevel1();
+         $(".loader").fadeIn(function(){
+             stopAndHideGeraLevel1();
+         })
      });
     var buy = false;
     buy10secBtn.click(function () {
@@ -240,15 +268,20 @@ function launchGeraLevel1(lvl, ship) {
         $("#gameScene").fadeIn("slow", function () {
             console.log("gamearea show");
             $('.searchField').css({display: "none"});
-            $('.test').css({
-                'background-image': 'url("./img/ship_bg/ship_' + ship + '.png"), url("./img/ship_bg/water.gif")'
-            });
-            $('img').css({display: 'block'});
-            $('.panel_lvl1').css({visibility: 'hidden'});
-            $('.panel_lvl2').css({visibility: 'hidden'});
-            $('.panel_lvl3').css({visibility: 'hidden'});
-            $('.panel_lvl4').css({visibility: 'hidden'});
-            $('.panel_lvl5').css({visibility: 'hidden'});
+
+                $('.test').css({
+                    'background-image': 'url("./img/ship_bg/ship_' + ship + '.png"), url("./img/ship_bg/water.gif")'
+                });
+                $('img').css({display: 'block'});
+                $('.panel_lvl1').css({visibility: 'hidden'});
+                $('.panel_lvl2').css({visibility: 'hidden'});
+                $('.panel_lvl3').css({visibility: 'hidden'});
+                $('.panel_lvl4').css({visibility: 'hidden'});
+                $('.panel_lvl5').css({visibility: 'hidden'});
+
+            setTimeout(function(){
+                $(".loader").fadeOut()
+            }, 1500);
 
             return 0;
         });

@@ -670,10 +670,14 @@ $(document).ready(function () {
     function launchGeraGame() {
         $("#gameScene").fadeOut("slow", function () {
             console.log("gamearea hidden");
+            $(".loader").fadeIn(function(){
+                $('.field' + completeLvl).css({display: "block"});
+            });
+            setTimeout(function(){
+                $(".loader").fadeOut();
+            },1500)
+            });
 
-            $('.field' + completeLvl).css({display: "block"});
-
-        });
         $('#bottom-box-5').css({display: "block"});
         generateCoins();
         launchGeraLevel1(completeLvl, shipPart)
