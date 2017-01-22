@@ -11,28 +11,27 @@ var degre = -90;
 var shipPart = '01';
 
 $(document).ready(function () {
-    //$(window).load(function(){
-
-    setTimeout(function(){
-
-   $('#area').html(' <video id="videoarea" autoplay src="./video/intro.mp4"> </video><video id="startarea" autoplay src="./video/start.mp4"> </video>')
-        $(".loader").fadeOut("slow");
-
+        //
         setTimeout(function () {
-        $('#videoarea').fadeOut();
-        setTimeout(function () {
-            $('#startarea').fadeIn();
+
+            $('#area').html(' <video id="videoarea" autoplay src="./video/intro.mp4"> </video><video id="startarea" autoplay src="./video/start.mp4"> </video>')
+            $(".loader").fadeOut("slow");
+
             setTimeout(function () {
-                $('#startarea').fadeOut();
+                $('#videoarea').fadeOut();
                 setTimeout(function () {
-                    $('#area').fadeOut();
-                    $('#gamearea').fadeIn();
+                    $('#startarea').fadeIn();
+                    setTimeout(function () {
+                        $('#startarea').fadeOut();
+                        setTimeout(function () {
+                            $('#area').fadeOut();
+                            $('#gamearea').fadeIn();
+                        }, 1000)
+                    }, 13500)
                 }, 1000)
-            }, 13500)
-        }, 1000)
-    }, 10000);
-    },2000);
-    //})
+            }, 10000);
+        }, 2000);
+
 
     $('#gamer').css({
         left: 50 * gmrX,
