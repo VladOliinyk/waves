@@ -164,8 +164,11 @@ function launchGeraLevel1(lvl, ship) {
     var buy10secBtn = $('#buy10seconds');
 
     function showSwarchOverMenu(buy) {
-        if(buy){
-            $('')
+
+        if(buy || checkMoney() < 5){
+            buy10secBtn.css({'display': 'none'})
+        } else{
+            buy10secBtn.css({'display': 'block'})
         }
         modal.css({display: "block"});
     }
@@ -177,14 +180,18 @@ function launchGeraLevel1(lvl, ship) {
      backToAdvantureBtn.click(function () {
          console.log("backToAdvanture");
          hideSwarchOverMenu();
-
+         $("#sashaMenu").css({display: "none"});
+         $('.menu_' + lvl).remove();
+         $('.field' + lvl).remove();
          stopAndHideGeraLevel1();
      });
     var buy = false;
     buy10secBtn.click(function () {
-        buy = true
-        hideSwarchOverMenu();
-        addSilverCoins(-10);
+        buy = true;
+
+            addSilverCoins(-5);
+            hideSwarchOverMenu();
+
         $(".searchField").fadeIn("slow", function () {
 
         });

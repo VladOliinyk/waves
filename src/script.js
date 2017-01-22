@@ -1,6 +1,6 @@
 var gamer_step = 50;
 var gamer_step_time = 50;
-var gamer_silver_coins = 20;
+var gamer_silver_coins = 0;
 var gamer_gold_coins = 1;
 
 var gmrX = 2;
@@ -678,7 +678,9 @@ function updateCoordsLabel() {
     var str = "Center position: (" + gamerX + ":" + gamerY + ")";
     $("#coords").val(str);
 }
-
+function checkMoney(){
+    return gamer_silver_coins
+}
 
 function addSilverCoins(count) {
     console.log("add " + count + " coins");
