@@ -340,6 +340,87 @@
     left: 330px;
     top: 415px;
 }
+.img_lvl_5_1 {
+    background-image: url("../img/cargo5/casette x=380 y=368.png");
+    width: 91px;
+    height: 37px;
+    left: 380px;
+    top: 368px;
+
+}
+
+.img_lvl_5_2 {
+    background-image: url("../img/cargo5/cellphone x=113 y=165.png");
+    width: 49px;
+    height: 49px;
+    left: 113px;
+    top: 165px;
+}
+
+.img_lvl_5_3 {
+    background-image: url("../img/cargo5/iphone x=580 y=351.png");
+    width: 24px;
+    height: 53px;
+    left: 580px;
+    top: 351px;
+}
+
+.img_lvl_5_4 {
+    background-image: url("../img/cargo5/morze x=197 y=402.png");
+    width: 123px;
+    height: 72px;
+    left: 197px;
+    top: 402px;
+}
+
+.img_lvl_5_5 {
+    background-image: url("../img/cargo5/nearphone x=1073 y=337.png");
+    width: 52px;
+    height: 64px;
+    left: 1073px;
+    top: 337px;
+}
+
+.img_lvl_5_6 {
+    background-image: url("../img/cargo5/nokia x=980 y=604.png");
+    width: 25px;
+    height: 56px;
+    left: 980px;
+    top: 604px;
+}
+
+.img_lvl_5_7 {
+    background-image: url("../img/cargo5/pager x=133 y=613.png");
+    width: 79px;
+    height: 51px;
+    left: 133px;
+    top: 613px;
+}
+
+.img_lvl_5_8 {
+    background-image: url("../img/cargo5/rupor x=533 y=214.png");
+    width: 36px;
+    height: 68px;
+    left: 533px;
+    top: 214px;
+}
+
+.img_lvl_5_9 {
+    background-image: url("../img/cargo5/sound x=908 y=488.png");
+    width: 56px;
+    height: 47px;
+    left: 908px;
+    top: 488px;
+
+}
+
+.img_lvl_5_10 {
+    background-image: url("../img/cargo5/vef202 x=471 y=547.png");
+    width: 48px;
+    height: 42px;
+    left: 471px;
+    top: 547px;
+}
 
 .img_position {
     /*margin: 0 10%;*/
@@ -601,6 +682,55 @@ body {
 
 .find_element_lvl4_10{
     background-image: url("../img/cargo4/menu_images/level4-item10-hide.png");
+    display: none;
+}
+.find_element_lvl5_1{
+    background-image: url("../img/cargo5/menu_images/level5-item1-hide.png");
+    display: none;
+}
+
+.find_element_lvl5_2{
+    background-image: url("../img/cargo5/menu_images/level5-item2-hide.png");
+    display: none;
+}
+
+.find_element_lvl5_3{
+    background-image: url("../img/cargo5/menu_images/level5-item3-hide.png");
+    display: none;
+}
+
+.find_element_lvl5_4{
+    background-image: url("../img/cargo5/menu_images/level5-item4-hide.png");
+    display: none;
+}
+
+.find_element_lvl5_5{
+    background-image: url("../img/cargo5/menu_images/level5-item5-hide.png");
+    display: none;
+}
+
+.find_element_lvl5_6{
+    background-image: url("../img/cargo5/menu_images/level5-item6-hide.png");
+    display: none;
+}
+
+.find_element_lvl5_7{
+    background-image: url("../img/cargo5/menu_images/level5-item7-hide.png");
+    display: none;
+}
+
+.find_element_lvl5_8{
+    background-image: url("../img/cargo5/menu_images/level5-item8-hide.png");
+    display: none;
+}
+
+.find_element_lvl5_9{
+    background-image: url("../img/cargo5/menu_images/level5-item9-hide.png");
+    display: none;
+}
+
+.find_element_lvl5_10{
+    background-image: url("../img/cargo5/menu_images/level5-item10-hide.png");
     display: none;
 }
 #bottom-box-5 {
