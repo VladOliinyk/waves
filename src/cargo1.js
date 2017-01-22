@@ -69,23 +69,28 @@ function launchGeraLevel1(lvl, ship) {
                     $('.panel_lvl4').css({visibility: 'visible'});
                     $('.panel_lvl5').css({visibility: 'visible'});
                     setTimeout(function () {
-                        if(completeLvl == 5){
+                        // if(completeLvl == 5){
                         $('.test').css({
                             "background-image": 'none'
                         });
                         $('#gamearea').html('<video id="endarea" autoplay src="./video/end.mp4"> </video>')
                         $('#endarea').fadeIn()
                         $('#menu').fadeOut()
-                        setTimeout(function(){
-                            $('#endarea').fadeOut(function(){
-                                $('#gamearea').html('<div class="results"><div class="pull_right"><div class="title">Your results</div> <div class="gold"><div class="coin_gold"></div>Gold coins ' + gamer_gold_coins + '/91</div><br><div class="silver"><div class="coin_silver"></div>Silver coins ' + gamer_silver_coins + '/135</div><br><div class="res">' + getResultText() + '</div> <br><div class="repost">  </div></div></div>')
+                        setTimeout(function () {
+                            $('#endarea').fadeOut(function () {
+                                $('#gamearea').html('<div class="results"><div class="pull_right"><div class="title">Your results</div> <div class="gold"><div class="coin_gold"></div>Gold coins ' + gamer_gold_coins + '/91</div><br><div class="silver"><div class="coin_silver"></div>Silver coins ' + gamer_silver_coins + '/135</div><br><div class="res">' + getResultText() + '</div> <br><div class="repost"> <div class="share42init" data-image="https://pp.vk.me/c637330/v637330918/2b3d1/Lg_Ahv_oqcM.jpg" data-title="Cargo Waves: The results" data-description="I have collected ' + gamer_gold_coins + '/90 gold coins and ' + gamer_silver_coins + '/125 silver coins in #CargoWawes game! Try to beat my record!" ></div> </div></div>')
                             })
+                            setTimeout(function () {
+                                showShare();
+                                console.log("showShare activated")
+                            }, 1000)
                         }, 20000)
-                        } else {
-                            $('.panel_lvl' + lvl).fadeOut();
-                            setTimeout(showSwarchOverMenu, 2000)
-                        }
+                        // } else {
+                        //     $('.panel_lvl' + lvl).fadeOut();
+                        //     setTimeout(showSwarchOverMenu, 2000)
+                        // }
                     }, 1000)
+
                 }
 
                 backToAdvantureBtn.click(function () {
@@ -94,21 +99,21 @@ function launchGeraLevel1(lvl, ship) {
                     $("#sashaMenu").css({display: "none"});
                     $('.menu_' + lvl).remove();
                     $('.field' + lvl).remove();
-                    if(completeLvl == 5){
+                    if (completeLvl == 5) {
                         $('#gamearea').css({
                             "background-image": 'none'
                         });
                         $('#gamearea').html('<video id="endarea" autoplay src="./video/end.mp4"> </video>')
                         $('#endarea').fadeIn()
                         $('#menu').fadeOut()
-                        setTimeout(function(){
-                            $('#endarea').fadeOut(function(){
+                        setTimeout(function () {
+                            $('#endarea').fadeOut(function () {
                                 $('#gamearea').html('<div class="results"><div class="pull_right"><div class="title">Your results</div> <div class="gold"><div class="coin_gold"></div>Gold coins ' + gamer_gold_coins + '/91</div><br><div class="silver"><div class="coin_silver"></div>Silver coins ' + gamer_silver_coins + '/135</div><br><div class="res">' + getResultText() + '</div></div></div>')
                             })
                         }, 20000)
 
-                    } else{
-                        $(".loader").fadeIn(function(){
+                    } else {
+                        $(".loader").fadeIn(function () {
                             stopAndHideGeraLevel1();
                         })
 
@@ -121,18 +126,20 @@ function launchGeraLevel1(lvl, ship) {
         });
     });
 
-    function getGoldCoins(){
+    function getGoldCoins() {
         return $('#coin_gold_count').html()
     }
-    function getSilverCoins(){
+
+    function getSilverCoins() {
         return $('#coin_silver_count').html()
     }
-    function getResultText(){
-        if (gamer_gold_coins + gamer_gold_coins < 50){
+
+    function getResultText() {
+        if (gamer_gold_coins + gamer_gold_coins < 50) {
             return 'You result is not so good...'
-        } else if(gamer_gold_coins + gamer_gold_coins < 150){
+        } else if (gamer_gold_coins + gamer_gold_coins < 150) {
             return 'You result is good!'
-        } else{
+        } else {
             return 'You are the perfect one!!!'
         }
     }
@@ -151,7 +158,7 @@ function launchGeraLevel1(lvl, ship) {
                 speed: 100, // fade in/out speed
                 timeout: -1, // timeout for mobile
                 // src: './img/search/level' + lvl + '-full-150.png', // The URI of the large image that will be shown in the magnifying lens.
-                src: './img/cargo'+ lvl +'/cargo'+ lvl +'_150.png',
+                src: './img/cargo' + lvl + '/cargo' + lvl + '_150.png',
                 onload: function () {
                 } // callback
             });
@@ -220,9 +227,9 @@ function launchGeraLevel1(lvl, ship) {
 
     function showSwarchOverMenu(buy) {
 
-        if(buy || checkMoney() < 5){
+        if (buy || checkMoney() < 5) {
             buy10secBtn.css({'display': 'none'})
-        } else{
+        } else {
             buy10secBtn.css({'display': 'block'})
         }
         modal.css({display: "block"});
@@ -232,22 +239,22 @@ function launchGeraLevel1(lvl, ship) {
         modal.css({display: "none"});
     }
 
-     backToAdvantureBtn.click(function () {
-         console.log("backToAdvanture");
-         hideSwarchOverMenu();
-         $("#sashaMenu").css({display: "none"});
-         $('.menu_' + lvl).remove();
-         $('.field' + lvl).remove();
-         $(".loader").fadeIn(function(){
-             stopAndHideGeraLevel1();
-         })
-     });
+    backToAdvantureBtn.click(function () {
+        console.log("backToAdvanture");
+        hideSwarchOverMenu();
+        $("#sashaMenu").css({display: "none"});
+        $('.menu_' + lvl).remove();
+        $('.field' + lvl).remove();
+        $(".loader").fadeIn(function () {
+            stopAndHideGeraLevel1();
+        })
+    });
     var buy = false;
     buy10secBtn.click(function () {
         buy = true;
 
-            addSilverCoins(-5);
-            hideSwarchOverMenu();
+        addSilverCoins(-5);
+        hideSwarchOverMenu();
 
         $(".searchField").fadeIn("slow", function () {
 
@@ -278,17 +285,17 @@ function launchGeraLevel1(lvl, ship) {
             console.log("gamearea show");
             $('.searchField').css({display: "none"});
 
-                $('.test').css({
-                    'background-image': 'url("./img/ship_bg/ship_' + ship + '.png"), url("./img/ship_bg/water.gif")'
-                });
-                $('img').css({display: 'block'});
-                $('.panel_lvl1').css({visibility: 'hidden'});
-                $('.panel_lvl2').css({visibility: 'hidden'});
-                $('.panel_lvl3').css({visibility: 'hidden'});
-                $('.panel_lvl4').css({visibility: 'hidden'});
-                $('.panel_lvl5').css({visibility: 'hidden'});
+            $('.test').css({
+                'background-image': 'url("./img/ship_bg/ship_' + ship + '.png"), url("./img/ship_bg/water.gif")'
+            });
+            $('img').css({display: 'block'});
+            $('.panel_lvl1').css({visibility: 'hidden'});
+            $('.panel_lvl2').css({visibility: 'hidden'});
+            $('.panel_lvl3').css({visibility: 'hidden'});
+            $('.panel_lvl4').css({visibility: 'hidden'});
+            $('.panel_lvl5').css({visibility: 'hidden'});
 
-            setTimeout(function(){
+            setTimeout(function () {
                 $(".loader").fadeOut();
             }, 1500);
 
