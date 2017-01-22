@@ -1,6 +1,6 @@
 var gamer_step = 50;
 var gamer_step_time = 50;
-var gamer_silver_coins = 0;
+var gamer_silver_coins = 10;
 var gamer_gold_coins = 1;
 
 var gmrX = 2;
@@ -11,7 +11,19 @@ var degre = -90;
 var shipPart = '01';
 
 $(document).ready(function () {
-
+    setTimeout(function () {
+        $('#videoarea').fadeOut();
+        setTimeout(function () {
+            $('#startarea').fadeIn();
+            setTimeout(function () {
+                $('#startarea').fadeOut();
+                setTimeout(function () {
+                    $('#area').fadeOut();
+                    $('#gamearea').fadeIn();
+                }, 1000)
+            }, 13500)
+        }, 1000)
+    }, 10000);
     $('#gamer').css({
         left: 50 * gmrX,
         top: 50 * gmrY
@@ -159,12 +171,13 @@ $(document).ready(function () {
         console.log("award " + award);
         if (award == 3) {
             addCoin = 1;
-            updateSilverCoinsCount(addCoin);
+            updateGoldCoinsCount(addCoin);
         }
         if (award == 666) {
             completeLvl++;
-            eval('ship_'+ shipPart+'_award_map[gmrY][gmrX]= 0');
+            eval('ship_' + shipPart + '_award_map[gmrY][gmrX]= 0');
             launchGeraGame();
+
         }
         if (award < 0) {
             changeLocation(award);
@@ -174,21 +187,21 @@ $(document).ready(function () {
         updateCoordsLabel();
     }
 
-    function changeLocation(award){
+    function changeLocation(award) {
         switch (award) {
             case -1:
                 $('#gamearea')
-                .fadeOut( "slow", function() {
-                        if(shipPart=='01'){
+                    .fadeOut("slow", function () {
+                        if (shipPart == '01') {
                             gmrX = 0;
                             $('#gamer').animate({
-                                left: 50*gmrX
+                                left: 50 * gmrX
                             }, 1);
-                        } else{
-                                gmrY = 11;
-                                $('#gamer').animate({
-                                    top: 50 * gmrY
-                                }, 1);
+                        } else {
+                            gmrY = 11;
+                            $('#gamer').animate({
+                                top: 50 * gmrY
+                            }, 1);
                         }
 
                         shipPart = '02';
@@ -200,17 +213,17 @@ $(document).ready(function () {
                 break;
             case -5:
                 $('#gamearea')
-                    .fadeOut( "slow", function() {
-                        if(shipPart=='01'){
+                    .fadeOut("slow", function () {
+                        if (shipPart == '01') {
                             gmrX = 23;
                             $('#gamer').animate({
-                                left: 50*gmrX
+                                left: 50 * gmrX
                             }, 1);
-                        } else{
-                                gmrY = 11;
-                                $('#gamer').animate({
-                                    top: 50 * gmrY
-                                }, 1);
+                        } else {
+                            gmrY = 11;
+                            $('#gamer').animate({
+                                top: 50 * gmrY
+                            }, 1);
                         }
 
                         shipPart = '00';
@@ -222,18 +235,18 @@ $(document).ready(function () {
                 break;
             case -6:
                 $('#gamearea')
-                    .fadeOut( "slow", function() {
-                        if (shipPart == '00'){
+                    .fadeOut("slow", function () {
+                        if (shipPart == '00') {
                             gmrX = 0;
                             $('#gamer').animate({
-                                left: 50*gmrX
+                                left: 50 * gmrX
                             }, 1);
-                        } else if(shipPart=='11'){
-                                gmrY = 11;
-                                $('#gamer').animate({
-                                    top: 50 * gmrY
-                                }, 1);
-                        } else{
+                        } else if (shipPart == '11') {
+                            gmrY = 11;
+                            $('#gamer').animate({
+                                top: 50 * gmrY
+                            }, 1);
+                        } else {
                             gmrX = 23;
                             $('#gamer').animate({
                                 left: 50 * gmrX
@@ -249,11 +262,11 @@ $(document).ready(function () {
                 break;
             case -4:
                 $('#gamearea')
-                    .fadeOut( "slow", function() {
-                        if (shipPart == '00'){
+                    .fadeOut("slow", function () {
+                        if (shipPart == '00') {
                             gmrY = 0;
                             $('#gamer').animate({
-                                top: 50*gmrY
+                                top: 50 * gmrY
                             }, 1);
                         } else {
                             gmrX = 23;
@@ -271,18 +284,18 @@ $(document).ready(function () {
                 break;
             case -3:
                 $('#gamearea')
-                    .fadeOut( "slow", function() {
-                        if (shipPart == '01'){
+                    .fadeOut("slow", function () {
+                        if (shipPart == '01') {
                             gmrY = 0;
                             $('#gamer').animate({
-                                top: 50*gmrY
+                                top: 50 * gmrY
                             }, 1);
-                        } else if(shipPart == '10'){
+                        } else if (shipPart == '10') {
                             gmrX = 0;
                             $('#gamer').animate({
                                 left: 50 * gmrX
                             }, 1);
-                        } else{
+                        } else {
                             gmrX = 23;
                             $('#gamer').animate({
                                 left: 50 * gmrX
@@ -298,11 +311,11 @@ $(document).ready(function () {
                 break;
             case -2:
                 $('#gamearea')
-                    .fadeOut( "slow", function() {
-                        if (shipPart == '11'){
+                    .fadeOut("slow", function () {
+                        if (shipPart == '11') {
                             gmrX = 0;
                             $('#gamer').animate({
-                                left: 50*gmrX
+                                left: 50 * gmrX
                             }, 1);
                         } else {
                             gmrY = 0;
@@ -320,12 +333,13 @@ $(document).ready(function () {
                 break;
         }
     }
+
     function awardIn() {
-        var award = eval('ship_'+shipPart+'_award_map[gmrY][gmrX]');
+        var award = eval('ship_' + shipPart + '_award_map[gmrY][gmrX]');
         // 2 - chest
         // 3 - coin
         if (award == 3) {
-            eval('ship_'+ shipPart+'_award_map[gmrY][gmrX]= 0');
+            eval('ship_' + shipPart + '_award_map[gmrY][gmrX]= 0');
         }
         return award;
     }
@@ -510,15 +524,15 @@ $(document).ready(function () {
 
     generateCoins();
 
-    function generateCoins(){
+    function generateCoins() {
         var parts = ['00', '01', '02', '10', '11', '12'];
-        for (var k=0; k<parts.length; k++) {
+        for (var k = 0; k < parts.length; k++) {
 
             for (var i = 0; i < 11; i++) {
                 for (var j = 0; j < 23; j++) {
                     console.log(eval('ship_' + parts[k] + '_award_map[i][j]'))
 
-                    if(eval('ship_' + parts[k] + '_award_map[i][j]') == 3 ){
+                    if (eval('ship_' + parts[k] + '_award_map[i][j]') == 3) {
                         eval('ship_' + parts[k] + '_award_map[i][j]=0')
                     }
                 }
@@ -526,13 +540,13 @@ $(document).ready(function () {
 
         }
 
-        for (var i=0; i<parts.length; i++){
+        for (var i = 0; i < parts.length; i++) {
             var counter = 0;
-            while (counter < 3){
+            while (counter < 3) {
                 var randX = getRandomInt(0, 23);
                 var randY = getRandomInt(0, 11);
 
-                if(eval('ship_' + parts[i] + '_award_map[randY][randX]') == 0 ){
+                if (eval('ship_' + parts[i] + '_award_map[randY][randX]') == 0) {
                     eval('ship_' + parts[i] + '_award_map[randY][randX] = 3');
                     counter++
                 }
@@ -547,7 +561,7 @@ $(document).ready(function () {
     }
 
     updateAwardMap();
-    function updateAwardMap(){
+    function updateAwardMap() {
         for (bg_row = 0; bg_row < 12; bg_row++) {
 
             for (bg_col = 0; bg_col < 24; bg_col++) {
@@ -562,14 +576,13 @@ $(document).ready(function () {
     }
 
 
-
     function getCurrentIdHTML(row, col) {
         var html = "";
         if (eval('ship_' + shipPart + '_award_map[row][col]') == 3) {
             html = "<img src='./img/goldCoin.gif' width='50'>";
         }
 
-        if (eval('ship_' + shipPart + '_award_map[row][col]') == 666){
+        if (eval('ship_' + shipPart + '_award_map[row][col]') == 666) {
             html = "<img src='./img/ship_bg/openContainer.png' width='50'>";
         }
 
@@ -591,7 +604,7 @@ $(document).ready(function () {
                 return answer;
             }
 
-            if (eval('ship_'+shipPart+'_way_map[gmrY][gmrX + 1]') == 0) {
+            if (eval('ship_' + shipPart + '_way_map[gmrY][gmrX + 1]') == 0) {
                 answer = true;
             } else {
                 answer = false;
@@ -606,7 +619,7 @@ $(document).ready(function () {
                 return answer;
             }
 
-            if (eval('ship_'+shipPart+'_way_map[gmrY][gmrX - 1]')   == 0) {
+            if (eval('ship_' + shipPart + '_way_map[gmrY][gmrX - 1]') == 0) {
                 answer = true;
             } else {
                 answer = false;
@@ -622,7 +635,7 @@ $(document).ready(function () {
             }
 
 
-            if ( eval('ship_' +shipPart+ '_way_map[gmrY - 1][gmrX]') == 0) {
+            if (eval('ship_' + shipPart + '_way_map[gmrY - 1][gmrX]') == 0) {
                 answer = true;
             } else {
                 answer = false;
@@ -638,8 +651,7 @@ $(document).ready(function () {
             }
 
 
-
-            if (eval('ship_'+shipPart+'_way_map[gmrY + 1][gmrX]') == 0) {
+            if (eval('ship_' + shipPart + '_way_map[gmrY + 1][gmrX]') == 0) {
                 answer = true;
             } else {
                 answer = false;
@@ -716,7 +728,7 @@ function updateCoordsLabel() {
     var str = "Center position: (" + gamerX + ":" + gamerY + ")";
     $("#coords").val(str);
 }
-function checkMoney(){
+function checkMoney() {
     return gamer_silver_coins
 }
 

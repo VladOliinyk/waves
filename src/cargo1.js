@@ -1,5 +1,6 @@
 var startTimer = 60;
 var findItemPrize = 5; // coins count when gamer find one hidden item
+var extraseconds = 15;
 
 function launchGeraLevel1(lvl, ship) {
     var countElements = 0;
@@ -63,8 +64,18 @@ function launchGeraLevel1(lvl, ship) {
                     $('.panel_lvl4').css({visibility: 'visible'});
                     $('.panel_lvl5').css({visibility: 'visible'});
                     setTimeout(function () {
-                        $('.panel_lvl' + lvl).fadeOut();
-                        setTimeout(showSwarchOverMenu, 2000)
+                        if(completeLvl == 5){
+                        $('.test').css({
+                            "background-image": 'none'
+                        });
+                        $('#gamearea').html('<video id="endarea" autoplay src="./video/end.mp4"> </video>')
+                        $('#endarea').fadeIn()
+                        $('#menu').fadeOut()
+
+                        } else {
+                            $('.panel_lvl' + lvl).fadeOut();
+                            setTimeout(showSwarchOverMenu, 2000)
+                        }
                     }, 1000)
                 }
 
@@ -74,7 +85,20 @@ function launchGeraLevel1(lvl, ship) {
                     $("#sashaMenu").css({display: "none"});
                     $('.menu_' + lvl).remove();
                     $('.field' + lvl).remove();
-                    stopAndHideGeraLevel1();
+                    if(completeLvl == 5){
+                        $('#gamearea').css({
+                            "background-image": 'none'
+                        });
+                        $('#gamearea').html('<video id="endarea" autoplay src="./video/end.mp4"> </video>')
+                        $('#endarea').fadeIn()
+                        $('#menu').fadeOut()
+
+                    } else{
+                        stopAndHideGeraLevel1();
+
+                    }
+
+
                 });
             }
 
@@ -197,7 +221,7 @@ function launchGeraLevel1(lvl, ship) {
         });
         $('#element').pietimer();
         $('#element').pietimer({
-                seconds: 10,
+                seconds: extraseconds,
                 color: 'rgba(0, 0, 0, 0.8)',
                 height: 96,
                 width: 96
@@ -225,6 +249,7 @@ function launchGeraLevel1(lvl, ship) {
             $('.panel_lvl3').css({visibility: 'hidden'});
             $('.panel_lvl4').css({visibility: 'hidden'});
             $('.panel_lvl5').css({visibility: 'hidden'});
+
             return 0;
         });
     }

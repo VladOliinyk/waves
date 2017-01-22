@@ -4,7 +4,9 @@
 }
 
 /* ---------------- */
-
+body{
+    background-image: url("../img/background.jpg");
+}
 @font-face {
     font-family: myCenturyGothic; /* Гарнитура шрифта */
     src: url("../src/fonts/GOTHIC.TTF"); /* Путь к файлу со шрифтом */
@@ -56,10 +58,33 @@ body {
     box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
 
     overflow: hidden;
-
+    display: none;
     /*background: rgba(255, 255, 255, 0);*/
     background-image: url("../img/ship_bg/ship_01.png"), url("../img/ship_bg/water.gif");
 }
+/*21019*/
+#videoarea, #startarea, #area, #endarea  {
+    position: relative;
+    width: 1200px;
+    height: 600px;
+    min-width: 1200px;
+    min-height: 600px;
+    max-width: 1200px;
+    max-height: 600px;
+
+    left: 50%;
+    margin: 15px 0 0 -600px;
+
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    /*background: rgba(255, 255, 255, 0);*/
+    }
+#startarea, #endarea {
+    display: none;
+}
+
 .gamearea_XX {
 
     width: 50px;
